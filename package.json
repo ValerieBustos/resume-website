@@ -20,6 +20,7 @@
   },
   "scripts": {
     "dev": "remix dev -c \"node server.mjs\"",
+    "build": "npx remix build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
