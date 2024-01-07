@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Bars3Icon } from "@heroicons/react/16/solid";
 import { UserCircleIcon } from "@heroicons/react/16/solid";
 import {
@@ -8,6 +7,7 @@ import {
   MenuTrigger,
   Popover,
 } from "react-aria-components";
+import { Avatar } from "~/media/avatar";
 import { Figma } from "~/media/figma";
 import { GitHub } from "~/media/github";
 import { LinkedIn } from "~/media/linkedin";
@@ -15,7 +15,7 @@ import { LinkedIn } from "~/media/linkedin";
 export function TopBar() {
   const navLinks = [
     {
-      label: "Experience",
+      label: "Resume",
     },
     {
       label: "Portfolio",
@@ -43,13 +43,13 @@ export function TopBar() {
           >
             <Bars3Icon className="text-slate-700" />
           </Button>
-          <Popover>
+          <Popover className="md:hidden">
             <div className="w-72 shadow-md rounded">
               <div className="flex flex-col justify-center text-center space-y-3 m-2">
-                <UserCircleIcon className="text-slate-200 h-24" />
+                <Avatar />
                 <div className="space-y-1">
-                  <p className="font-semibold">Valerie Bustos</p>
-                  <p>Front-end developer</p>
+                  <p className="font-semibold text-lg">Valerie Bustos</p>
+                  <p className="text-base">Frontend Developer</p>
                 </div>
               </div>
               <div className="my-12 h-0.5 border-t-0 bg-slate-100 opacity-100 dark:opacity-50 mr-3 ml-3" />
