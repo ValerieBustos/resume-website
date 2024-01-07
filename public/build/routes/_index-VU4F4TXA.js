@@ -1,0 +1,1 @@
+import{c as t,e as l}from"/build/_shared/chunk-DWFMXSZ6.js";var e=t(l(),1);function i(){return(0,e.jsx)("div",{className:"flex w-full h-24 justify-center bg-base-color",children:(0,e.jsx)("h1",{className:"flex align-middle text-3xl font-bold underline text-white animate-pulse",children:"This website is better than Spencer's"})})}export{i as default};
