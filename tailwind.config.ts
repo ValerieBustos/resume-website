@@ -7,5 +7,6 @@ export default {
       colors: { "base-color": "#a081d9", "action-color": "#59c7d0" },
     },
   },
+  darkMode: "class",
   plugins: [],
 } satisfies Config;
