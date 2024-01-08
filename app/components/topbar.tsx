@@ -27,8 +27,8 @@ export function TopBar() {
 
   return (
     <nav className="bg-white border-slate-200 dark:bg-slate-900">
-      <div className="flex space-between">
-        <div className="max-w-screen-xl flex flex-wrap ml-8 items-center space-x-16 mx-auto my-2 p-4">
+      <div className="flex space-between py-9 px-16">
+        <div className="flex flex-wrap items-center space-x-16 mx-auto ml-0 text-center">
           <a
             href=""
             className="flex items-center space-x-3 rtl:space-x-reverse"
@@ -56,9 +56,9 @@ export function TopBar() {
           <MenuTrigger>
             <Button
               aria-label="Menu"
-              className="inline-flex items-center mr-4 p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden hover:base-color focus:outline-none focus:ring-2 focus:ring-gray-200 dark:hover:bg-slate-600 dark:focus:ring-gray-600"
+              className="items-center mr-4 p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden hover:base-color focus:outline-none focus:ring-2 focus:ring-gray-200 dark:hover:bg-slate-600 dark:focus:ring-gray-600"
             >
-              <Bars3Icon className="text-slate-700 dark:text-slate-400" />
+              <Bars3Icon className="text-slate-700 dark:text-white" />
             </Button>
             <Popover className="md:hidden">
               <div className="w-72 shadow-md rounded dark:bg-slate-800 pt-6">
@@ -82,11 +82,15 @@ export function TopBar() {
                   ))}
                 </Menu>
                 <div className="h-24" />
-                <SocialIcons />
+                <div className="flex justify-center w-full p-6 space-x-4">
+                  <SocialIcons />
+                </div>
               </div>
             </Popover>
           </MenuTrigger>
-          <SocialIcons className="hidden w-full md:block md:w-auto" />
+        </div>
+        <div className="hidden w-full md:block md:w-auto space-x-4">
+          <SocialIcons />
         </div>
       </div>
     </nav>

@@ -14,6 +14,8 @@ import {
   useTheme,
 } from "./utils/theme-provider";
 import clsx from "clsx";
+import { TopBar } from "./components/topbar";
+import { ThemeToggle } from "./components/theme-toggle";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
@@ -32,8 +34,10 @@ function App() {
         <Meta />
         <Links />
       </head>
-      <body className="text-slate-800 dark:text-white">
+      <body className="w-full text-slate-800 dark:text-white dark:bg-slate-900 max-w-screen-2xl mx-auto">
+        <TopBar />
         <Outlet />
+        <ThemeToggle />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
