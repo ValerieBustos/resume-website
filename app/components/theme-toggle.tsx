@@ -11,16 +11,16 @@ export function ThemeToggle() {
     );
   };
   return (
-    <div className="dark:bg-slate-300">
-      <div className="flex w-full justify-end pr-6 z-0 relative">
+    <div className="dark:bg-slate-300 px-16">
+      <div className="flex w-full justify-end z-0 relative">
         <ToggleButton
           onPress={toggleTheme}
-          className="my-8 mr-6 border-2 shadow-sm border-slate-200 rounded-full p-2 dark:bg-slate-800 dark:border-slate-500 outline-none fixed  bottom-0"
+          className="my-8 border-2 shadow-sm border-slate-200 rounded-full p-2 dark:bg-slate-800 dark:border-slate-500 outline-none fixed  bottom-0"
         >
           {theme === Theme.LIGHT || !theme ? (
-            <SunIcon className="text-slate-400 h-8 h-8" />
+            <MoonIcon className="text-slate-400 h-8 h-8" />
           ) : (
-            <MoonIcon className="text-slate-200 h-8 h-8" />
+            <SunIcon className="text-slate-200 h-8 h-8" />
           )}
         </ToggleButton>
       </div>

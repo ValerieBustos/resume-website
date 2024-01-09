@@ -26,8 +26,8 @@ export function TopBar() {
   ];
 
   return (
-    <nav className="bg-white border-slate-200 dark:bg-slate-900">
-      <div className="flex space-between py-9 px-16">
+    <nav className="bg-white border-slate-200 dark:bg-slate-900 px-16">
+      <div className="flex space-between pt-9 pb-9">
         <div className="flex flex-wrap items-center space-x-16 mx-auto ml-0 text-center">
           <a
             href=""
