@@ -33,7 +33,7 @@ export function TopBar() {
             href=""
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
-            <span className="self-center text-3xl text-violet-400 font-bold whitespace-nowrap">
+            <span className="self-center text-3xl text-violet-600 font-bold whitespace-nowrap dark:text-violet-400">
               VB
             </span>
           </a>

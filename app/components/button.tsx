@@ -12,7 +12,7 @@ export function Button({ label, primary, icon }: ButtonProps) {
     <AriaButton
       className={clsx(
         "rounded-full py-2 px-4 text-white font-medium",
-        primary ? "bg-cyan-500" : "bg-slate-400"
+        primary ? "bg-cyan-600 hover:bg-cyan-500" : " hover:bg-slate-400"
       )}
     >
       <div className="flex items-center">

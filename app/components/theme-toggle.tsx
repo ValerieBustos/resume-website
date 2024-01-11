@@ -15,7 +15,7 @@ export function ThemeToggle() {
       <div className="flex w-full justify-end z-0 relative">
         <ToggleButton
           onPress={toggleTheme}
-          className="my-8 border-2 shadow-sm border-slate-200 rounded-full p-2 dark:bg-slate-800 dark:border-slate-500 outline-none fixed  bottom-0"
+          className="my-8 border-2 shadow-sm border-slate-200 rounded-full p-2 bg-white dark:bg-slate-800 dark:border-slate-500 outline-none fixed  bottom-0"
         >
           {theme === Theme.LIGHT || !theme ? (
             <MoonIcon className="text-slate-400 h-8 h-8" />
