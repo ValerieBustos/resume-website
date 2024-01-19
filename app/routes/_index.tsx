@@ -52,7 +52,7 @@ export default function Index() {
         <HomepagePic />
       </div>
       <div className="flex flex-col flex-wrap justify-between w-full  space-y-4 border-y-2 border-violet-300 dark:border-violet-400 py-12">
-        <div className="flex sm:justify-center sm:w-full">
+        <div className="flex justify-center sm:w-full">
           <h3 className="font-semibold text-2xl pb-2 text-center">
             This site was designed and built with
           </h3>
