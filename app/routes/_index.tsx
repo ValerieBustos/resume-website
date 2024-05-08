@@ -8,6 +8,7 @@ import {
 import { TailwindLogo } from "~/media/tailwind-logo";
 import { RemixLogo } from "~/media/remix-logo";
 import { TypeScriptLogo } from "~/media/typescript-logo";
+import { UniversalAccessIcon } from "~/media/universal-access-icon";
 
 export default function Index() {
   return (
@@ -70,8 +71,8 @@ export default function Index() {
             <TypeScriptLogo />
             <p>TypeScript</p>
           </div>
-          <div className="flex flex-col whitespace-nowrap h-full justify-center items-center space-y-3 m-2">
-            <UserGroupIcon className="h-[3rem] text-violet-400" />
+          <div className="flex flex-col h-full justify-center items-center space-y-3 m-2">
+            <UniversalAccessIcon />
             <p>Accessibility</p>
           </div>
         </div>

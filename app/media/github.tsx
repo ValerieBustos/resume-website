@@ -8,8 +8,8 @@ export function GitHub() {
       <Link href="https://github.com/valeriebustos">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          height="32"
-          width="32"
+          height="24"
+          width="24"
           viewBox="0 0 496 512"
         >
           <path

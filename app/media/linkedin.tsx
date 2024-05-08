@@ -8,8 +8,8 @@ export function LinkedIn() {
       <Link href="https://www.linkedin.com/in/valerie-bustos/">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          height="32"
-          width="32"
+          height="24"
+          width="24"
           viewBox="0 0 448 512"
         >
           <path

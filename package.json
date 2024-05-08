@@ -1,6 +1,7 @@
 {
   "homepage": "https://valeriebustos.github.io/resume-website",
   "dependencies": {
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@heroicons/react": "^2.1.1",
     "@radix-ui/themes": "^2.0.3",
     "@remix-run/express": "^2.4.1",
