@@ -1,5 +1,4 @@
 import { PortfolioProject } from "~/components/portfolio-project";
-import homepagePic from "~/media/homepage-pic.png";
 import loFiMirian from "~/media/mirians-website/lo-fi.png";
 import hiFiMirian from "~/media/mirians-website/hi-fi.png";
 import mainMirian from "~/media/mirians-website/main.png";

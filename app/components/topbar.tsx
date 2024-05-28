@@ -20,12 +20,13 @@ export function TopBar() {
     },
     {
       label: "Contact",
+      link: "/contact",
     },
   ];
 
   return (
     <nav className="bg-white border-slate-200 dark:bg-slate-900 px-16">
-      <div className="flex space-between pt-9 pb-9">
+      <div className="flex space-between py-6 text-sm">
         <div className="flex flex-wrap items-center space-x-16 mx-auto ml-0 text-center">
           <a
             href="./"
