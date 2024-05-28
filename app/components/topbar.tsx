@@ -19,9 +19,6 @@ export function TopBar() {
       link: "/portfolio",
     },
     {
-      label: "Hobbies",
-    },
-    {
       label: "Contact",
     },
   ];
