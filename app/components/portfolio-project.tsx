@@ -38,28 +38,36 @@ export function PortfolioProject(props: PortfolioProjectProps) {
         <div className="text-xs">
           <p>{description}</p>
         </div>
-        <div className="flex pt-3 pb-4 flex-wrap text-sm font-semibold text-cyan-700">
+        <div className="flex pt-3 pb-4 flex-wrap text-sm font-semibold text-cyan-700 space-x-6">
           {loFiPicture ? (
-            <div className="transition ease-in-out delay-150 flex flex-col shadow-md rounded-md lg:w-40 w-36 overflow-hidden mr-6 hover:-translate-y-1">
-              <Link target="_blank" href={loFiLink} className="outline-none">
+            <Link
+              target="_blank"
+              href={loFiLink}
+              className="rounded-md focus:outline-none focus:ring focus:ring-cyan-200"
+            >
+              <div className="transition ease-in-out delay-150 flex flex-col shadow-md rounded-md lg:w-40 w-36 overflow-hidden hover:-translate-y-1">
                 <img src={loFiPicture} className="object-cover" />
                 <div className="flex items-center p-2 justify-between">
                   <h4 className="text-center">Lo-fi Prototype</h4>
                   <ChevronRightIcon className="h-4" />
                 </div>
-              </Link>
-            </div>
+              </div>
+            </Link>
           ) : null}
           {hiFiPicture ? (
-            <div className="transition ease-in-out delay-150 flex flex-col shadow-md rounded-md lg:w-40 w-36 overflow-hidden mr-6 hover:-translate-y-1">
-              <Link target="_blank" href={hiFiLink} className="outline-none">
+            <Link
+              target="_blank"
+              href={hiFiLink}
+              className="rounded-md focus:outline-none focus:ring focus:ring-cyan-200"
+            >
+              <div className="transition ease-in-out delay-150 flex flex-col shadow-md rounded-md lg:w-40 w-36 overflow-hidden hover:-translate-y-1">
                 <img src={hiFiPicture} className="object-cover" />
                 <div className="flex items-center p-2 justify-between">
                   <h4 className="text-center">Hi-fi Prototype</h4>
                   <ChevronRightIcon className="h-4" />
                 </div>
-              </Link>
-            </div>
+              </div>
+            </Link>
           ) : null}
         </div>
         <div>

@@ -1,8 +1,8 @@
 export function TailwindLogo() {
   return (
     <svg
-      height="3rem"
-      width="3rem"
+      height="2rem"
+      width="2rem"
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 54 33"

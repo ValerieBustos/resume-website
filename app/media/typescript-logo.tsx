@@ -8,9 +8,9 @@ export function TypeScriptLogo() {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
-      height="3rem"
+      height="2rem"
       viewBox="0 0 128 128"
-      width="3rem"
+      width="2rem"
     >
       <rect fill="#a78bfa" height="128" rx="6" width="128" />
       <path

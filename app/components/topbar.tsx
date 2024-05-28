@@ -1,6 +1,7 @@
 import { Bars3Icon } from "@heroicons/react/16/solid";
 import {
   Button,
+  Link,
   Menu,
   MenuItem,
   MenuTrigger,
@@ -28,24 +29,24 @@ export function TopBar() {
     <nav className="bg-white border-slate-200 dark:bg-slate-900 px-16">
       <div className="flex space-between py-6 text-sm">
         <div className="flex flex-wrap items-center space-x-16 mx-auto ml-0 text-center">
-          <a
+          <Link
             href="./"
-            className="flex items-center space-x-3 rtl:space-x-reverse"
+            className="flex items-center space-x-3 rounded-md rtl:space-x-reverse focus:outline-none focus:ring focus:ring-violet-300"
           >
-            <span className="self-center text-3xl text-violet-600 font-bold whitespace-nowrap dark:text-violet-400">
+            <span className="self-center text-3xl text-violet-600 font-bold whitespace-nowrap dark:text-violet-400 ">
               VB
             </span>
-          </a>
+          </Link>
           <div className="hidden w-full md:block md:w-auto" id="navbar-default">
             <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               {navLinks.map((menuItem, index) => (
                 <li key={`nav-menuItem-${index}`}>
-                  <a
+                  <Link
                     href={menuItem.link}
-                    className="block px-3 text-slate-700 rounded hover:bg-slate-100 md:hover:bg-transparent md:border-0 md:hover:text-violet-400 md:p-0 dark:text-white md:dark:hover:text-violet-400 dark:hover:bg-slate-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                    className="block px-3 text-slate-700 focus-visible:outline-none focus-visible:ring focus-visible:ring-violet-300 rounded hover:bg-slate-100 md:hover:bg-transparent md:border-0 md:hover:text-violet-400 md:p-0 dark:text-white md:dark:hover:text-violet-400 dark:hover:bg-slate-700 dark:hover:text-white md:dark:hover:bg-transparent"
                   >
                     {menuItem.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

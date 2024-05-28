@@ -34,7 +34,7 @@ function App() {
         <Meta />
         <Links />
       </head>
-      <body className="w-full text-slate-800 dark:text-white dark:bg-slate-900 max-w-screen-2xl mx-auto">
+      <body className="w-full text-slate-800 dark:text-white dark:bg-slate-900 max-w-screen-xl mx-auto">
         <TopBar />
         <Outlet />
         <ThemeToggle />

@@ -21,11 +21,11 @@ export default function Index() {
               <h2> Front End Developer</h2>
               <span className="text-xl font-bold text-slate-400">·</span>
               <p className="text-violet-600 dark:text-violet-400 font-medium">
-                1 year coding
+                2 years coding
               </p>
             </div>
           </div>
-          <p className="text-lg">
+          <p className="text-sm">
             I'm a software developer with a passion for design. I discovered my
             love for frontend developent during my years at the University of
             Waterloo. After graduating in 2023, I've been working on making
@@ -52,26 +52,26 @@ export default function Index() {
         </div>
         <HomepagePic />
       </div>
-      <div className="flex flex-col flex-wrap justify-between w-full  space-y-4 border-y-2 border-violet-300 dark:border-violet-400 py-12">
+      <div className="flex flex-col flex-wrap justify-between w-full space-y-4 border-y-2 border-violet-300 dark:border-violet-400 py-8  bg-gradient dark:text-slate-800">
         <div className="flex justify-center sm:w-full">
-          <h3 className="font-semibold text-2xl pb-2 text-center">
+          <h3 className="font-semibold text-lg text-center">
             This site was designed and built with
           </h3>
         </div>
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 grid-cols-1 gap-y-10 justify-items-center md:px-24 px-10 text-xl">
-          <div className="flex flex-col h-full justify-center items-center space-y-3 m-2">
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 grid-cols-1 gap-y-4 justify-items-center md:px-24 px-10 text-xl">
+          <div className="flex text-base h-full justify-center items-center space-x-3 m-2">
             <TailwindLogo />
-            <p>Tailwindcss</p>
+            <p>TailwindCSS</p>
           </div>
-          <div className="flex flex-col h-full justify-center items-center space-y-3 m-2">
+          <div className="flex text-base h-full justify-center items-center space-x-3 m-2">
             <RemixLogo />
             <p>React Remix</p>
           </div>
-          <div className="flex flex-col h-full justify-center items-center space-y-3 m-2">
+          <div className="flex text-base h-full justify-center items-center space-x-3 m-2">
             <TypeScriptLogo />
             <p>TypeScript</p>
           </div>
-          <div className="flex flex-col h-full justify-center items-center space-y-3 m-2">
+          <div className="flex text-base h-full justify-center items-center space-x-3 m-2">
             <UniversalAccessIcon />
             <p>Accessibility</p>
           </div>

@@ -3,8 +3,8 @@ export function RemixLogo() {
     <div className="p-[3.5px]">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="2.5rem"
-        height="2.5rem"
+        width="1.5rem"
+        height="1.5rem"
         viewBox="0 0 256 297"
         version="1.1"
       >
