@@ -13,6 +13,10 @@ import { SocialIcons } from "./social-icons";
 export function TopBar() {
   const navLinks = [
     {
+      label: "Home",
+      link: "/",
+    },
+    {
       label: "Resume",
     },
     {

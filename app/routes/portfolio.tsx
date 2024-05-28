@@ -7,12 +7,12 @@ import hiFiBrochure from "~/media/atikha-brochure/hi-fi.png";
 
 export default function Portfolio() {
   return (
-    <div className="px-16 space-y-10">
-      <h1 className="text-3xl font-medium">Portfolio</h1>
+    <div className="px-16 ">
+      <h1 className="text-3xl font-medium mb-10">Portfolio</h1>
       <PortfolioProject
         name="Miriannella Curls"
         type="Desktop"
-        description="Curly hair influencer Mirian Orejuela asked me to create a website that would showcase her social media, blog and online store catalogue. I carefully designed and implemented this website communicating with Mirian in every step of the process while making sure to include market needs such as easy WhatsApp communication and keep it in tune with Mirian's branding. This website was made in Wordpress, allowing Mirian to change the content herself and add blog posts with ease."
+        description="Curly hair influencer Mirian Orejuela asked me to create a website that would showcase her social media, blog and online store catalogue. I carefully designed and implemented this website communicating with Mirian in every step of the process. This website was made in Wordpress, allowing Mirian to change the content herself and add blog posts with ease."
         loFiPicture={loFiMirian}
         loFiLink="https://www.figma.com/proto/1imcZZtkvb5vwTLUptbxYC/Wireframe---Mirian's-Website?node-id=0-1&t=p4nC4djUzHoNDPiw-1"
         hiFiPicture={hiFiMirian}

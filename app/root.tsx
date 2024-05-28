@@ -16,6 +16,7 @@ import {
 import clsx from "clsx";
 import { TopBar } from "./components/topbar";
 import { ThemeToggle } from "./components/theme-toggle";
+import Footer from "./components/footer";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
@@ -37,6 +38,7 @@ function App() {
       <body className="w-full text-slate-800 dark:text-white dark:bg-slate-900 max-w-screen-xl mx-auto">
         <TopBar />
         <Outlet />
+        <Footer />
         <ThemeToggle />
         <ScrollRestoration />
         <Scripts />

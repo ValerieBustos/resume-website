@@ -34,12 +34,13 @@ export default function Index() {
             in learning more about me, feel free to take a look at my portfolio,
             resume or the hobbies page.
           </p>
-          <div className="inline-grid self-start sm:grid-cols-2 grid-cols-1 pt-4 ">
+          <div className="flex flex-wrap gap-3">
             <div>
               <Button
                 primary
                 label="View portfolio"
                 icon={<BriefcaseIcon className="h-5 w-5" />}
+                href="/portfolio"
               />
             </div>
             <div>

@@ -27,11 +27,11 @@ export function PortfolioProject(props: PortfolioProjectProps) {
   } = props;
 
   return (
-    <div className="flex lg:space-x-16 flex-wrap-reverse lg:flex-nowrap items-center border-y-2 border-slate-100">
-      <div className="flex flex-col space-y-4 w-3/4">
-        <div className="flex items-center space-x-4 mt-4">
+    <div className="flex lg:space-x-16 flex-wrap-reverse md:flex-nowrap items-center justify-center border-2 py-2 px-2 lg:py-6 lg:px-8 rounded-md border-slate-100 mb-10">
+      <div className="flex flex-col space-y-4 w-3/4 items-center md:items-start text-center md:text-start">
+        <div className="flex items-center space-x-4">
           <h2 className="text-2xl font-semibold">{name}</h2>
-          <div className="rounded-full bg-lime-200/70 text-green-900 text-sm font-semibold px-3 py-1">
+          <div className="rounded-full bg-lime-200/70 text-green-900 text-sm font-semibold px-3 py-1 hidden md:flex">
             <h3>{type}</h3>
           </div>
         </div>
@@ -81,9 +81,10 @@ export function PortfolioProject(props: PortfolioProjectProps) {
           </div>
         </div>
       </div>
-      <div className="w-1/2 mb-6 lg:mb-0">
-        <img src={featuredPicture} />
-      </div>
+      <img
+        className="w-[40%] rounded-md mb-4 lg:mb-0 hidden md:inline-block"
+        src={featuredPicture}
+      />
     </div>
   );
 }
