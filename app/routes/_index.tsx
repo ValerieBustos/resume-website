@@ -15,6 +15,9 @@ import MiriansSite from "~/media/mirians-website/main.png";
 import BrochureAtikha from "~/media/atikha-brochure/main.png";
 import { Button as AriaButton, Link } from "react-aria-components";
 import { ThemeToggle } from "~/components/theme-toggle";
+import AutodeskLogo from "~/media/companies/autodesk-logo.png";
+import ShinydocsLogo from "~/media/companies/shinydocs-logo.png";
+import MaplesoftLogo from "~/media/companies/maplesoft-logo.png";
 
 export default function Index() {
   return (
@@ -92,65 +95,76 @@ export default function Index() {
             intern at Autodesk, Maplesoft and Shinydocs. I started a full-time
             role at Shinydocs after graduating last year.
           </p>
-          <div className="pl-6">
-            <p className="mb-3 italic">Some of my skill highlights are:</p>
-            <div className="space-y-2">
-              <div className="flex items-center space-x-3">
-                <PuzzlePieceIcon
-                  aria-hidden
-                  height={16}
-                  className="text-violet-400"
-                />
-                <p>
-                  Developing features using{" "}
-                  <span className="font-semibold">TailwindCSS</span> and{" "}
-                  <span className="font-semibold">React Remix</span>
-                </p>
+          <div className="flex  justify-between px-6">
+            <div>
+              <p className="mb-3 italic">Some of my skill highlights are:</p>
+              <div className="space-y-2">
+                <div className="flex items-center space-x-3">
+                  <PuzzlePieceIcon
+                    aria-hidden
+                    height={16}
+                    className="text-violet-400"
+                  />
+                  <p>
+                    Developing features using{" "}
+                    <span className="font-semibold">TailwindCSS</span> and{" "}
+                    <span className="font-semibold">React Remix</span>
+                  </p>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <PuzzlePieceIcon
+                    aria-hidden
+                    height={16}
+                    className="text-violet-400"
+                  />
+                  <p>
+                    Developing and documenting UI components using{" "}
+                    <span className="font-semibold">Storybook</span>
+                  </p>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <PuzzlePieceIcon
+                    aria-hidden
+                    height={16}
+                    className="text-violet-400"
+                  />
+                  <p>
+                    Designing mockups and prototypes using{" "}
+                    <span className="font-semibold">Figma</span>
+                  </p>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <PuzzlePieceIcon
+                    aria-hidden
+                    height={16}
+                    className="text-violet-400"
+                  />
+                  <p>
+                    Establishing guidelines for design sprints and leading{" "}
+                    <span className="font-semibold">Usability Testing</span>
+                  </p>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <PuzzlePieceIcon
+                    aria-hidden
+                    height={16}
+                    className="text-violet-400"
+                  />
+                  <p>
+                    Reviewing pull requests and using{" "}
+                    <span className="font-semibold">Git</span> as source control
+                  </p>
+                </div>
               </div>
-              <div className="flex items-center space-x-3">
-                <PuzzlePieceIcon
-                  aria-hidden
-                  height={16}
-                  className="text-violet-400"
-                />
-                <p>
-                  Developing and documenting UI components using{" "}
-                  <span className="font-semibold">Storybook</span>
-                </p>
-              </div>
-              <div className="flex items-center space-x-3">
-                <PuzzlePieceIcon
-                  aria-hidden
-                  height={16}
-                  className="text-violet-400"
-                />
-                <p>
-                  Designing mockups and prototypes using{" "}
-                  <span className="font-semibold">Figma</span>
-                </p>
-              </div>
-              <div className="flex items-center space-x-3">
-                <PuzzlePieceIcon
-                  aria-hidden
-                  height={16}
-                  className="text-violet-400"
-                />
-                <p>
-                  Establishing guidelines for design sprints and leading{" "}
-                  <span className="font-semibold">Usability Testing</span>
-                </p>
-              </div>
-              <div className="flex items-center space-x-3">
-                <PuzzlePieceIcon
-                  aria-hidden
-                  height={16}
-                  className="text-violet-400"
-                />
-                <p>
-                  Reviewing pull requests and using{" "}
-                  <span className="font-semibold">Git</span> as source control
-                </p>
-              </div>
+            </div>
+
+            <div className="grid grid-cols-3 grid-rows-3">
+              <img src={MaplesoftLogo} className="h-8 col-start-1" />
+              <img src={AutodeskLogo} className="h-6 col-start-2 row-start-2" />
+              <img
+                src={ShinydocsLogo}
+                className="h-6 col-start-3 row-start-3"
+              />
             </div>
           </div>
         </div>

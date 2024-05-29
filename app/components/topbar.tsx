@@ -23,6 +23,7 @@ export function TopBar() {
     },
     {
       label: "About me",
+      link: "/about-me",
     },
     {
       label: "Contact",
