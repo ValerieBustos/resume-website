@@ -32,8 +32,8 @@ export function TopBar() {
 
   return (
     <nav className="bg-white border-slate-200 dark:bg-slate-900 px-16">
-      <div className="flex space-between py-6 text-sm">
-        <div className="flex flex-wrap items-center space-x-16 mx-auto ml-0 text-center">
+      <div className="flex space-x-6 py-6 text-sm">
+        <div className="flex flex-wrap items-center space-x-10 mx-auto ml-0 text-center">
           <Link
             href="./"
             className="flex items-center space-x-3 rounded-md rtl:space-x-reverse focus:outline-none focus:ring focus:ring-violet-300"
@@ -56,6 +56,7 @@ export function TopBar() {
               ))}
             </ul>
           </div>
+          <ThemeToggle />
         </div>
         <div className="flex items-center">
           <MenuTrigger>
@@ -89,6 +90,7 @@ export function TopBar() {
                 <div className="h-24" />
                 <div className="flex justify-center w-full p-6 space-x-4">
                   <SocialIcons />
+                  <ThemeToggle />
                 </div>
               </div>
             </Popover>
@@ -97,7 +99,6 @@ export function TopBar() {
         <div className="hidden w-full md:block md:w-auto space-x-4">
           <div className="flex space-x-5">
             <SocialIcons />
-            <ThemeToggle />
           </div>
         </div>
       </div>

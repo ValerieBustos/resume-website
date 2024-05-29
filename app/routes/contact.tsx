@@ -4,7 +4,7 @@ import gradPic from "~/media/valerie-grad.png";
 
 export default function Contact() {
   return (
-    <div className="p-6 bg-gradient h-[30rem]">
+    <div className="p-6 bg-gradient h-[31.5rem]">
       <div className="flex flex-col items-center space-y-12 pt-6">
         <div className="flex space-x-6">
           <img

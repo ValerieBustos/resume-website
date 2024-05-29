@@ -1,10 +1,20 @@
 import { Button } from "../components/button";
 import { HomepagePic } from "~/media/homepage-pic";
-import { ArrowDownIcon, BriefcaseIcon } from "@heroicons/react/16/solid";
+import {
+  ArrowDownIcon,
+  ArrowRightIcon,
+  BriefcaseIcon,
+  DocumentTextIcon,
+  PuzzlePieceIcon,
+} from "@heroicons/react/16/solid";
 import { TailwindLogo } from "~/media/tailwind-logo";
 import { RemixLogo } from "~/media/remix-logo";
 import { TypeScriptLogo } from "~/media/typescript-logo";
 import { UniversalAccessIcon } from "~/media/universal-access-icon";
+import MiriansSite from "~/media/mirians-website/main.png";
+import BrochureAtikha from "~/media/atikha-brochure/main.png";
+import { Button as AriaButton, Link } from "react-aria-components";
+import { ThemeToggle } from "~/components/theme-toggle";
 
 export default function Index() {
   return (
@@ -39,8 +49,8 @@ export default function Index() {
             </div>
             <div>
               <Button
-                label="Download resume"
-                icon={<ArrowDownIcon className="h-5 w-5" />}
+                label="View resume"
+                icon={<DocumentTextIcon className="h-5 w-5" />}
               />
             </div>
           </div>
@@ -69,6 +79,111 @@ export default function Index() {
           <div className="flex text-base h-full justify-center items-center space-x-3 m-2">
             <UniversalAccessIcon />
             <p>Accessibility</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex p-16 text-sm">
+        <div>
+          <h3 className="text-2xl font-bold mb-6">My Experience</h3>
+          <p className="mb-3">
+            Even though I have a cumulative 2 years of experience, I've been
+            coding for 4 years. During university I had the opportunity to
+            intern at Autodesk, Maplesoft and Shinydocs. I started a full-time
+            role at Shinydocs after graduating last year.
+          </p>
+          <div className="pl-6">
+            <p className="mb-3 italic">Some of my skill highlights are:</p>
+            <div className="space-y-2">
+              <div className="flex items-center space-x-3">
+                <PuzzlePieceIcon
+                  aria-hidden
+                  height={16}
+                  className="text-violet-400"
+                />
+                <p>
+                  Developing features using{" "}
+                  <span className="font-semibold">TailwindCSS</span> and{" "}
+                  <span className="font-semibold">React Remix</span>
+                </p>
+              </div>
+              <div className="flex items-center space-x-3">
+                <PuzzlePieceIcon
+                  aria-hidden
+                  height={16}
+                  className="text-violet-400"
+                />
+                <p>
+                  Developing and documenting UI components using{" "}
+                  <span className="font-semibold">Storybook</span>
+                </p>
+              </div>
+              <div className="flex items-center space-x-3">
+                <PuzzlePieceIcon
+                  aria-hidden
+                  height={16}
+                  className="text-violet-400"
+                />
+                <p>
+                  Designing mockups and prototypes using{" "}
+                  <span className="font-semibold">Figma</span>
+                </p>
+              </div>
+              <div className="flex items-center space-x-3">
+                <PuzzlePieceIcon
+                  aria-hidden
+                  height={16}
+                  className="text-violet-400"
+                />
+                <p>
+                  Establishing guidelines for design sprints and leading{" "}
+                  <span className="font-semibold">Usability Testing</span>
+                </p>
+              </div>
+              <div className="flex items-center space-x-3">
+                <PuzzlePieceIcon
+                  aria-hidden
+                  height={16}
+                  className="text-violet-400"
+                />
+                <p>
+                  Reviewing pull requests and using{" "}
+                  <span className="font-semibold">Git</span> as source control
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="px-16 space-y-4 mb-16">
+        <h3 className="text-2xl font-bold mb-6 ">My Projects</h3>
+        <p className="text-sm">
+          Lots to do and lots to learn! I like to keep myself busy by practicing
+          skills I learn on the job and applying course knowledge on personal
+          projects to perfect my craft. I am very proud of trying to get every
+          detail right and making designs as clean as possible.
+        </p>
+        <div className="flex flex-wrap gap-10 p-6">
+          <img src={MiriansSite} className="h-72 rounded-md" />
+          <img src={BrochureAtikha} className="h-72 rounded-md" />
+          <div className="flex items-center">
+            <Link
+              href="/portfolio"
+              className=" dark:bg-slate-700 dark:text-slate-100 inline-block items-center rounded-full py-2 px-4 font-medium text-sm flex rounded-full bg-slate-300 text-slate-700 hover:opacity-90 focus:outline-none focus:ring focus:ring-slate-200"
+            >
+              <div className="mr-1">Read more</div>
+              <ArrowRightIcon height={16} />
+            </Link>
+          </div>
+        </div>
+        <div>
+          <p className="text-sm">
+            And... This website! Feel free to try out{" "}
+            <span className="font-semibold">Dark mode</span> and play with the
+            size to see the responsiveness.
+          </p>
+          <div className="flex justify-center mt-8">
+            <ThemeToggle size="lg" showLabel />
           </div>
         </div>
       </div>
