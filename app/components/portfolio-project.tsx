@@ -27,7 +27,7 @@ export function PortfolioProject(props: PortfolioProjectProps) {
   } = props;
 
   return (
-    <div className="flex lg:space-x-16 flex-wrap-reverse md:flex-nowrap items-center justify-center border-2 py-2 px-2 lg:py-6 lg:px-8 rounded-md border-slate-100 mb-10">
+    <div className="flex lg:space-x-16 flex-wrap-reverse md:flex-nowrap items-center justify-center border-2 dark:border-slate-700 py-2 px-2 lg:py-6 lg:px-8 rounded-md border-slate-100 mb-10">
       <div className="flex flex-col space-y-4 w-3/4 items-center md:items-start text-center md:text-start">
         <div className="flex items-center space-x-4">
           <h2 className="text-2xl font-semibold">{name}</h2>
@@ -43,7 +43,7 @@ export function PortfolioProject(props: PortfolioProjectProps) {
             <Link
               target="_blank"
               href={loFiLink}
-              className="rounded-md focus:outline-none focus:ring focus:ring-cyan-200"
+              className="rounded-md focus:outline-none focus:ring focus:ring-cyan-200 dark:bg-slate-700 dark:text-cyan-400"
             >
               <div className="transition ease-in-out delay-150 flex flex-col shadow-md rounded-md lg:w-40 w-36 overflow-hidden hover:-translate-y-1">
                 <img src={loFiPicture} className="object-cover" />
@@ -58,7 +58,7 @@ export function PortfolioProject(props: PortfolioProjectProps) {
             <Link
               target="_blank"
               href={hiFiLink}
-              className="rounded-md focus:outline-none focus:ring focus:ring-cyan-200"
+              className="rounded-md focus:outline-none focus:ring focus:ring-cyan-200 dark:bg-slate-700 dark:text-cyan-400"
             >
               <div className="transition ease-in-out delay-150 flex flex-col shadow-md rounded-md lg:w-40 w-36 overflow-hidden hover:-translate-y-1">
                 <img src={hiFiPicture} className="object-cover" />
@@ -74,7 +74,7 @@ export function PortfolioProject(props: PortfolioProjectProps) {
           <h4 className="font-semibold mb-2 text-xs">Tools and skills used</h4>
           <div className="flex space-x-2 mb-4">
             {skillsUsed.map((skill) => (
-              <div className="rounded-sm text-xs px-2 font-semibold bg-slate-100 text-slate-700">
+              <div className="rounded-sm text-xs px-2 font-semibold bg-slate-100 text-slate-700 dark:bg-slate-600 dark:text-slate-100">
                 {skill}
               </div>
             ))}

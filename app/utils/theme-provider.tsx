@@ -1,4 +1,5 @@
-import { createContext, useContext, useState } from "react";
+import { useFetcher } from "@remix-run/react";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
 import type { Dispatch, ReactNode, SetStateAction } from "react";
 
 enum Theme {
@@ -15,6 +16,12 @@ const getPreferredTheme = () =>
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+const themes: Array<Theme> = Object.values(Theme);
+
+function isTheme(value: unknown): value is Theme {
+  return typeof value === "string" && themes.includes(value as Theme);
+}
+
 const clientThemeCode = `
 ;(() => {
   const theme = window.matchMedia(${JSON.stringify(prefersDarkMQ)}).matches
@@ -25,7 +32,7 @@ const clientThemeCode = `
   if (themeAlreadyApplied) {
     // this script shouldn't exist if the theme is already applied!
     console.warn(
-      "Hi there, could you let Matt know you're seeing this message? Thanks!",
+      "Hi there, could you let me know you're seeing this message? Thanks!",
     );
   } else {
     cl.add(theme);
@@ -33,20 +40,56 @@ const clientThemeCode = `
 })();
 `;
 
-function NonFlashOfWrongThemeEls() {
-  return <script dangerouslySetInnerHTML={{ __html: clientThemeCode }} />;
+function NonFlashOfWrongThemeEls({ ssrTheme }: { ssrTheme: boolean }) {
+  return (
+    <>
+      {ssrTheme ? null : (
+        <script dangerouslySetInnerHTML={{ __html: clientThemeCode }} />
+      )}
+    </>
+  );
 }
 
-function ThemeProvider({ children }: { children: ReactNode }) {
+function ThemeProvider({
+  children,
+  specifiedTheme,
+}: {
+  children: ReactNode;
+  specifiedTheme: Theme | null;
+}) {
   const [theme, setTheme] = useState<Theme | null>(() => {
-    // there's no way for us to know what the theme should be in this context
-    // defaulting to light
-    if (typeof window !== "object") {
-      return null;
+    if (specifiedTheme) {
+      if (themes.includes(specifiedTheme)) {
+        return specifiedTheme;
+      } else {
+        return null;
+      }
+    }
+    return null;
+  });
+
+  const persistTheme = useFetcher();
+  const persistThemeRef = useRef(persistTheme);
+  useEffect(() => {
+    persistThemeRef.current = persistTheme;
+  }, [persistTheme]);
+
+  const mountRun = useRef(false);
+
+  useEffect(() => {
+    if (!mountRun.current) {
+      mountRun.current = true;
+      return;
+    }
+    if (!theme) {
+      return;
     }
 
-    return getPreferredTheme();
-  });
+    persistThemeRef.current.submit(
+      { theme },
+      { action: "action/set-theme", method: "post" }
+    );
+  }, [theme]);
   return (
     <ThemeContext.Provider value={[theme, setTheme]}>
       {children}
@@ -62,4 +105,4 @@ function useTheme() {
   return context;
 }
 
-export { NonFlashOfWrongThemeEls, Theme, ThemeProvider, useTheme };
+export { NonFlashOfWrongThemeEls, Theme, ThemeProvider, isTheme, useTheme };

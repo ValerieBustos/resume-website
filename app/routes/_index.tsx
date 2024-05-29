@@ -1,10 +1,6 @@
 import { Button } from "../components/button";
 import { HomepagePic } from "~/media/homepage-pic";
-import {
-  ArrowDownIcon,
-  BriefcaseIcon,
-  UserGroupIcon,
-} from "@heroicons/react/16/solid";
+import { ArrowDownIcon, BriefcaseIcon } from "@heroicons/react/16/solid";
 import { TailwindLogo } from "~/media/tailwind-logo";
 import { RemixLogo } from "~/media/remix-logo";
 import { TypeScriptLogo } from "~/media/typescript-logo";
@@ -30,9 +26,7 @@ export default function Index() {
             love for frontend developent during my years at the University of
             Waterloo. After graduating in 2023, I've been working on making
             great apps and components ever since. I'm always looking to improve
-            my skills and expand my horizons by learning. If you're interested
-            in learning more about me, feel free to take a look at my portfolio,
-            resume or the hobbies page.
+            my skills and expand my horizons by learning.
           </p>
           <div className="flex flex-wrap gap-3">
             <div>

@@ -1,4 +1,4 @@
-import type { LinksFunction } from "@remix-run/node";
+import type { LinksFunction, LoaderFunction } from "@remix-run/node";
 import {
   Links,
   Meta,
@@ -6,24 +6,42 @@ import {
   Scripts,
   LiveReload,
   ScrollRestoration,
+  useLoaderData,
 } from "@remix-run/react";
 import stylesheet from "~/tailwind.css";
 import {
   NonFlashOfWrongThemeEls,
+  Theme,
   ThemeProvider,
   useTheme,
 } from "./utils/theme-provider";
 import clsx from "clsx";
 import { TopBar } from "./components/topbar";
-import { ThemeToggle } from "./components/theme-toggle";
 import Footer from "./components/footer";
+import { getThemeSession } from "./utils/theme.server";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
 ];
 
+export type LoaderData = {
+  theme: Theme | null;
+};
+
+export const loader: LoaderFunction = async ({ request }) => {
+  const themeSession = await getThemeSession(request);
+
+  const data: LoaderData = {
+    theme: themeSession.getTheme(),
+  };
+
+  return data;
+};
+
 function App() {
   const [theme] = useTheme();
+
+  const data = useLoaderData<LoaderData>();
 
   return (
     <html lang="en" className={clsx(theme)}>
@@ -31,7 +49,7 @@ function App() {
         <meta charSet="utf-8" />
         <meta name="viewport" />
         <link rel="icon" href="data:image/x-icon;base64,AA" />
-        <NonFlashOfWrongThemeEls />
+        <NonFlashOfWrongThemeEls ssrTheme={Boolean(data.theme)} />
         <Meta />
         <Links />
       </head>
@@ -39,7 +57,6 @@ function App() {
         <TopBar />
         <Outlet />
         <Footer />
-        <ThemeToggle />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
@@ -49,8 +66,9 @@ function App() {
 }
 
 export default function AppWithProviders() {
+  const data = useLoaderData<LoaderData>();
   return (
-    <ThemeProvider>
+    <ThemeProvider specifiedTheme={data.theme}>
       <App />
     </ThemeProvider>
   );

@@ -11,7 +11,7 @@ export default function Contact() {
             src={gradPic}
             className="h-[24rem] rounded-full hidden md:inline-flex"
           />
-          <div className="flex flex-col border-4 border-violet-100 bg-violet-50 px-10 py-16 rounded-[6rem] rounded-bl-none w-[22rem] space-y-6 ">
+          <div className="flex flex-col text-slate-800 border-4 border-violet-100 bg-violet-50 px-10 py-16 rounded-[6rem] rounded-bl-none w-[22rem] space-y-6 ">
             <h1 className="text-3xl font-bold mb-4">Let's get in touch!</h1>
             <div className="flex items-center space-x-3">
               <div className="p-1.5 rounded-full bg-violet-300 text-white">

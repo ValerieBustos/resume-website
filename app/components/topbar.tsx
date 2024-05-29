@@ -9,6 +9,7 @@ import {
 } from "react-aria-components";
 import { Avatar } from "~/media/avatar";
 import { SocialIcons } from "./social-icons";
+import { ThemeToggle } from "./theme-toggle";
 
 export function TopBar() {
   const navLinks = [
@@ -17,11 +18,11 @@ export function TopBar() {
       link: "/",
     },
     {
-      label: "Resume",
-    },
-    {
       label: "Portfolio",
       link: "/portfolio",
+    },
+    {
+      label: "About me",
     },
     {
       label: "Contact",
@@ -94,7 +95,10 @@ export function TopBar() {
           </MenuTrigger>
         </div>
         <div className="hidden w-full md:block md:w-auto space-x-4">
-          <SocialIcons />
+          <div className="flex space-x-5">
+            <SocialIcons />
+            <ThemeToggle />
+          </div>
         </div>
       </div>
     </nav>
