@@ -43,7 +43,7 @@ export function TopBar() {
   ];
 
   return (
-    <nav className="fixed position-0 border border-b-xl z-50 w-full bg-white border-slate-200 dark:bg-slate-900 px-16">
+    <nav className="flex fixed items-center justify-between max-w-screen-2xl top-0 border-b dark:border-b-slate-500 z-50 w-full bg-white border-b-slate-200 dark:bg-slate-900 px-16">
       <div className="flex space-x-6 py-4 text-sm">
         <div className="flex flex-wrap items-center space-x-10 mx-auto ml-0 text-center">
           <Link
@@ -108,10 +108,10 @@ export function TopBar() {
             </Popover>
           </MenuTrigger>
         </div>
-        <div className="hidden w-full md:block md:w-auto space-x-4">
-          <div className="flex space-x-5">
-            <SocialIcons />
-          </div>
+      </div>
+      <div className="hidden w-full md:block md:w-auto space-x-4">
+        <div className="flex space-x-5">
+          <SocialIcons />
         </div>
       </div>
     </nav>
