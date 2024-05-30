@@ -1,11 +1,13 @@
 import Graduation from "~/media/about/valerie-class-2023.jpg";
 import Curly from "~/media/about/valerie-curly.jpg";
+import Macaw from "~/media/about/valerie-macaw.png";
 
 export default function AboutMe() {
   return (
-    <div className="px-16 pt-10 pb-16 space-y-10">
+    <div className="px-16 pt-10 pb-16 space-y-6">
       <h1 className="text-2xl font-semibold">A little bit about me!</h1>
-      <div className="text-sm flex bg-violet-50 border-2 border-violet-100  dark:bg-slate-800 dark:border-slate-700 shadow-lg rounded-md items-center">
+      <div className="text-sm space-y-6 flex bg-violet-50 border-2 border-violet-100 shadow-lg rounded-md">
+        <img src={Graduation} className="w-[30%] rounded-l-md" />
         <div className="text-sm space-y-4 p-10">
           <h2 className="text-lg font-bold mb-4">Education</h2>
           <p>
@@ -30,10 +32,9 @@ export default function AboutMe() {
             Engineering Summit, which was voted best talk of the event.
           </p>
         </div>
-        <img src={Graduation} className="w-1/3 rounded-r-md" />
       </div>
-      <div className="text-sm flex bg-violet-50 items-center border-2 border-violet-100 dark:bg-slate-800 dark:border-slate-700 shadow-lg rounded-md">
-        <div className="text-sm space-y-4 p-10">
+      <div className="text-sm flex bg-violet-50 items-center  border-2 border-violet-100 shadow-lg rounded-md">
+        <div className="text-sm space-y-4 p-10 rounded-l-md">
           <h2 className="text-lg font-bold mb-4">Hobbies</h2>
           <p>
             Whenever I'm not coding I'm working on helping other fellow curly
@@ -50,7 +51,7 @@ export default function AboutMe() {
             Girl Method approved.
           </p>
         </div>
-        <img src={Curly} className="w-1/3 rounded-r-md" />
+        <img src={Curly} className="w-1/3" />
       </div>
     </div>
   );
