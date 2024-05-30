@@ -51,6 +51,7 @@ export default function Index() {
               <Button
                 label="View resume"
                 icon={<DocumentTextIcon className="h-5 w-5" />}
+                href="https://drive.google.com/file/d/1QouSAs16JLPk3cMAzG9o59PwQiFVmFgN/view?usp=drive_link"
               />
             </div>
           </div>
