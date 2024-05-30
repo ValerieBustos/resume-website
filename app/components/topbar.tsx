@@ -10,8 +10,19 @@ import {
 import { Avatar } from "~/media/avatar";
 import { SocialIcons } from "./social-icons";
 import { ThemeToggle } from "./theme-toggle";
+import { useEffect, useState } from "react";
 
 export function TopBar() {
+  const [top, setTop] = useState(true);
+
+  useEffect(() => {
+    const scrollHandler = () => {
+      window.scrollY > 10 ? setTop(false) : setTop(true);
+    };
+    window.addEventListener("scroll", scrollHandler);
+    return () => window.removeEventListener("scroll", scrollHandler);
+  }, [top]);
+
   const navLinks = [
     {
       label: "Home",
@@ -32,8 +43,8 @@ export function TopBar() {
   ];
 
   return (
-    <nav className="bg-white border-slate-200 dark:bg-slate-900 px-16">
-      <div className="flex space-x-6 py-6 text-sm">
+    <nav className="fixed position-0 border border-b-xl z-50 w-full bg-white border-slate-200 dark:bg-slate-900 px-16">
+      <div className="flex space-x-6 py-4 text-sm">
         <div className="flex flex-wrap items-center space-x-10 mx-auto ml-0 text-center">
           <Link
             href="./"
@@ -49,7 +60,7 @@ export function TopBar() {
                 <li key={`nav-menuItem-${index}`}>
                   <Link
                     href={menuItem.link}
-                    className="block px-3 text-slate-700 focus-visible:outline-none focus-visible:ring focus-visible:ring-violet-300 rounded hover:bg-slate-100 md:hover:bg-transparent md:border-0 md:hover:text-violet-400 md:p-0 dark:text-white md:dark:hover:text-violet-400 dark:hover:bg-slate-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                    className="block px-3 text-slate-700 without-ring outline-none focus-visible:ring-violet-300 rounded hover:bg-slate-100 md:hover:bg-transparent md:border-0 md:hover:text-violet-400 md:p-0 dark:text-white md:dark:hover:text-violet-400 dark:hover:bg-slate-700 dark:hover:text-white md:dark:hover:bg-transparent"
                   >
                     {menuItem.label}
                   </Link>

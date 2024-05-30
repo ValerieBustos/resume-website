@@ -53,9 +53,12 @@ function App() {
         <Meta />
         <Links />
       </head>
-      <body className="w-full text-slate-800 dark:text-white dark:bg-slate-900 max-w-screen-xl mx-auto">
+      <body className="h-screen flex flex-col flex-0 w-full text-slate-800 dark:text-white dark:bg-slate-900 max-w-screen-2xl mx-auto">
         <TopBar />
-        <Outlet />
+        <div className="pt-[4rem] flex flex-1 flex-col">
+          <Outlet />
+        </div>
+
         <Footer />
         <ScrollRestoration />
         <Scripts />

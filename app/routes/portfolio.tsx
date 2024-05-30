@@ -4,30 +4,38 @@ import hiFiMirian from "~/media/mirians-website/hi-fi.png";
 import mainMirian from "~/media/mirians-website/main.png";
 import mainBrochure from "~/media/atikha-brochure/main.png";
 import hiFiBrochure from "~/media/atikha-brochure/hi-fi.png";
+import mainWebsite from "~/media/website-main.png";
 
 export default function Portfolio() {
   return (
-    <div className="px-16 ">
+    <div className="px-16 mt-12">
       <h1 className="text-3xl font-medium mb-10">Portfolio</h1>
+      <PortfolioProject
+        name="valeriebustos.com"
+        type="Responsive"
+        description="I built this site from scratch using React Aria components, TypeScript and React Remix. Feel free to try out dark mode and change the window width to see the responsive design."
+        featuredPicture={mainWebsite}
+        skillsUsed={["Responsive Design", "TailwindCSS", "React Remix"]}
+      />
       <PortfolioProject
         name="Miriannella Curls"
         type="Desktop"
-        description="Curly hair influencer Mirian Orejuela asked me to create a website that would showcase her social media, blog and online store catalogue. I carefully designed and implemented this website communicating with Mirian in every step of the process. This website was made in Wordpress, allowing Mirian to change the content herself and add blog posts with ease."
+        description="I designed and implemented a website for curly hair influencer Mirian Orejuela to showcase her social media, blog and online store. I consulted Mirian at every step of the process to ensure that she was satisfied with the result. I built the website in Wordpress so that Mirian could change content and add blog posts with ease."
         loFiPicture={loFiMirian}
         loFiLink="https://www.figma.com/proto/1imcZZtkvb5vwTLUptbxYC/Wireframe---Mirian's-Website?node-id=0-1&t=p4nC4djUzHoNDPiw-1"
         hiFiPicture={hiFiMirian}
         hiFiLink="https://www.figma.com/proto/1imcZZtkvb5vwTLUptbxYC/Wireframe---Mirian's-Website?node-id=27-79&t=p4nC4djUzHoNDPiw-1"
         featuredPicture={mainMirian}
-        skillsUsed={["Wordpress", "CSS", "Figma", "Usability Testing"]}
+        skillsUsed={["WordPress", "CSS", "Figma", "Usability Testing"]}
       />
       <PortfolioProject
         name="Atikha"
         type="Brochure"
-        description="I launched my curly haircare line Atikha in early May. I designed a brochure using Figma to share the brand's concept, products and basic information to new customers."
+        description="I launched Atikha, my own curly haircare line, in 2024. I designed this brochure in Figma, drawing on my knowledge of design to showcase my brand for new customers."
         featuredPicture={mainBrochure}
         hiFiLink="https://simplebooklet.com/brochureatikha"
         hiFiPicture={hiFiBrochure}
-        skillsUsed={["Figma", "Graphic design"]}
+        skillsUsed={["Figma", "Graphic Design"]}
       />
       {/* <PortfolioProject
         name="Pup Academy"

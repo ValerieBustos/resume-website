@@ -21,7 +21,7 @@ export function ThemeToggle({ showLabel, size }: ThemeToggleProps) {
       <ToggleButton
         onPress={toggleTheme}
         className={clsx(
-          "border-[2px] flex shadow-sm border-slate-200 rounded-full bg-white dark:bg-slate-800 dark:border-slate-500 outline-none",
+          "border-[2px] flex shadow-sm border-slate-200 rounded-full focus:ring focus:ring-cyan-200 bg-white dark:bg-slate-800 dark:border-slate-500 outline-none",
 
           size === "lg" ? "p-4" : "p-2"
         )}
