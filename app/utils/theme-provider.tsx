@@ -16,11 +16,13 @@ const getPreferredTheme = () =>
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+/* SPENCER
 const themes: Array<Theme> = Object.values(Theme);
 
 function isTheme(value: unknown): value is Theme {
   return typeof value === "string" && themes.includes(value as Theme);
 }
+*/
 
 const clientThemeCode = `
 ;(() => {
@@ -40,24 +42,23 @@ const clientThemeCode = `
 })();
 `;
 
-function NonFlashOfWrongThemeEls({ ssrTheme }: { ssrTheme: boolean }) {
+function NonFlashOfWrongThemeEls(/*{ ssrTheme }: { ssrTheme: boolean }*/) {
   return (
     <>
-      {ssrTheme ? null : (
-        <script dangerouslySetInnerHTML={{ __html: clientThemeCode }} />
-      )}
+      <script dangerouslySetInnerHTML={{ __html: clientThemeCode }} />
     </>
   );
 }
 
 function ThemeProvider({
-  children,
-  specifiedTheme,
+  children /* SPENCER ,
+  specifiedTheme, */,
 }: {
   children: ReactNode;
-  specifiedTheme: Theme | null;
+  /* SPENCER specifiedTheme: Theme | null; */
 }) {
   const [theme, setTheme] = useState<Theme | null>(() => {
+    /*
     if (specifiedTheme) {
       if (themes.includes(specifiedTheme)) {
         return specifiedTheme;
@@ -66,8 +67,16 @@ function ThemeProvider({
       }
     }
     return null;
+    */
+    // SPENCER to delete later?
+    if (typeof window !== "object") {
+      return null;
+    }
+
+    return getPreferredTheme();
   });
 
+  /* SPENCER
   const persistTheme = useFetcher();
   const persistThemeRef = useRef(persistTheme);
   useEffect(() => {
@@ -90,11 +99,14 @@ function ThemeProvider({
       { action: "action/set-theme", method: "post" }
     );
   }, [theme]);
+  */
+  //return //(
   return (
     <ThemeContext.Provider value={[theme, setTheme]}>
       {children}
     </ThemeContext.Provider>
   );
+  //)
 }
 
 function useTheme() {
@@ -105,4 +117,9 @@ function useTheme() {
   return context;
 }
 
-export { NonFlashOfWrongThemeEls, Theme, ThemeProvider, isTheme, useTheme };
+export {
+  NonFlashOfWrongThemeEls,
+  Theme,
+  ThemeProvider,
+  /* isTheme, */ useTheme,
+};

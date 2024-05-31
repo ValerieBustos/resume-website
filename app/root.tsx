@@ -11,7 +11,7 @@ import {
 import stylesheet from "~/tailwind.css";
 import {
   NonFlashOfWrongThemeEls,
-  Theme,
+  //Theme,
   ThemeProvider,
   useTheme,
 } from "./utils/theme-provider";
@@ -24,24 +24,25 @@ export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
 ];
 
-export type LoaderData = {
-  theme: Theme | null;
-};
+// export type LoaderData = {
+//   theme: Theme | null;
+// };
 
 export const loader: LoaderFunction = async ({ request }) => {
-  const themeSession = await getThemeSession(request);
+  // const themeSession = await getThemeSession(request);
 
-  const data: LoaderData = {
-    theme: themeSession.getTheme(),
-  };
+  // const data: LoaderData = {
+  //   theme: themeSession.getTheme(),
+  // };
 
-  return data;
+  // return data;
+  return null;
 };
 
 function App() {
   const [theme] = useTheme();
 
-  const data = useLoaderData<LoaderData>();
+  //const data = useLoaderData<LoaderData>();
 
   return (
     <html lang="en" className={clsx(theme)}>
@@ -49,7 +50,9 @@ function App() {
         <meta charSet="utf-8" />
         <meta name="viewport" />
         <link rel="icon" href="data:image/x-icon;base64,AA" />
-        <NonFlashOfWrongThemeEls ssrTheme={Boolean(data.theme)} />
+        <NonFlashOfWrongThemeEls
+        // ssrTheme={Boolean(data.theme)}
+        />
         <Meta />
         <Links />
       </head>
@@ -69,9 +72,11 @@ function App() {
 }
 
 export default function AppWithProviders() {
-  const data = useLoaderData<LoaderData>();
+  //const data = useLoaderData<LoaderData>();
   return (
-    <ThemeProvider specifiedTheme={data.theme}>
+    <ThemeProvider
+    // specifiedTheme={data.theme}
+    >
       <App />
     </ThemeProvider>
   );

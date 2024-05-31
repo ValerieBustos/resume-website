@@ -32,7 +32,7 @@ export function ThemeToggle({ showLabel, size }: ThemeToggleProps) {
             {theme === Theme.LIGHT ? "Try dark mode" : "Try light mode"}
           </p>
         ) : null}
-        {theme === Theme.LIGHT || !theme ? (
+        {theme === Theme.LIGHT ? (
           <MoonIcon
             className="text-slate-400"
             height={size === "lg" ? 20 : 18}
