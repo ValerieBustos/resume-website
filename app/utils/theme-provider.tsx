@@ -1,5 +1,12 @@
 import { useFetcher } from "@remix-run/react";
-import { createContext, useContext, useEffect, useRef, useState } from "react";
+import {
+  createContext,
+  createElement,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import type { Dispatch, ReactNode, SetStateAction } from "react";
 
 enum Theme {
@@ -24,36 +31,68 @@ function isTheme(value: unknown): value is Theme {
 
 const clientThemeCode = `
 ;(() => {
-  const theme = window.matchMedia(${JSON.stringify(prefersDarkMQ)}).matches
-    ? 'dark'
-    : 'light';
+  const theme = window.matchMedia('${prefersDarkMQ}').matches
+    ? '${Theme.DARK}'
+    : '${Theme.LIGHT}';
+
   const cl = document.documentElement.classList;
-  const themeAlreadyApplied = cl.contains('light') || cl.contains('dark');
-  if (themeAlreadyApplied) {
+  if (
+    cl.contains('${Theme.LIGHT}') || cl.contains('${Theme.DARK}')
+  ) {
+    // The theme is already applied...
     // this script shouldn't exist if the theme is already applied!
-    console.warn(
-      "Hi there, could you let me know you're seeing this message? Thanks!",
-    );
+    console.warn("See theme-provider.tsx>clientThemeCode>cl.contains");
+    // Hi there, you shouldn't be seeing this!
   } else {
     cl.add(theme);
   }
 
-  const meta = document.querySelector("meta[name=color-scheme]");
+  const meta = document.querySelector('meta[name=color-scheme]');
   if (meta) {
-    if (theme === "dark") {
-      meta.content = "dark light";
-    } else if (theme === "light") {
-      meta.content = "light dark"; 
-    }
+    meta.content = theme === '${Theme.DARK}' ? 'dark light' : 'light dark';
   } else {
-    console.warn(
-      "Hey, could you let me know you're seeing this message? Thanks!",
-    );
+    console.warn("See theme-provider.tsx>clientThemeCode>meta");
+    // Hey, could you let me know you're seeing this console.warn? Thanks!
   }
-})();
+})();` // Remove double slash comments & replace excess white space with a single space.
+  .replace(/((?<=[^:])\/\/.*|\s)+/g, " ")
+  .trim();
+
+const themeStylesCode = `
+ /* default light, but app-preference is "dark" */
+ html.dark {
+   light-mode {
+     display: none;
+   }
+ }
+
+ /* default light, and no app-preference */
+ html:not(.dark) {
+   dark-mode {
+     display: none;
+   }
+ }
+
+ @media (prefers-color-scheme: dark) {
+   /* prefers dark, but app-preference is "light" */
+   html.light {
+     dark-mode {
+       display: none;
+     }
+   }
+
+   /* prefers dark, and app-preference is "dark" */
+   html.dark,
+   /* prefers dark and no app-preference */
+   html:not(.light) {
+     light-mode {
+       display: none;
+     }
+   }
+ }
 `;
 
-function NonFlashOfWrongThemeEls({ ssrTheme }: { ssrTheme: boolean }) {
+function ThemeHead({ ssrTheme }: { ssrTheme: boolean }) {
   const [theme] = useTheme();
 
   return (
@@ -63,9 +102,44 @@ function NonFlashOfWrongThemeEls({ ssrTheme }: { ssrTheme: boolean }) {
         content={theme === "light" ? "light dark" : "dark light"}
       />
       {ssrTheme ? null : (
-        <script dangerouslySetInnerHTML={{ __html: clientThemeCode }} />
+        <>
+          <script dangerouslySetInnerHTML={{ __html: clientThemeCode }} />
+          <style dangerouslySetInnerHTML={{ __html: themeStylesCode }} />
+        </>
       )}
     </>
+  );
+}
+
+const clientDarkAndLightModeElsCode = `;(() => {
+  const theme = window.matchMedia(${JSON.stringify(prefersDarkMQ)}).matches
+    ? 'dark'
+    : 'light';
+  const darkEls = document.querySelectorAll("dark-mode");
+  const lightEls = document.querySelectorAll("light-mode");
+  for (const darkEl of darkEls) {
+    if (theme === "dark") {
+      for (const child of darkEl.childNodes) {
+        darkEl.parentElement?.append(child);
+      }
+    }
+    darkEl.remove();
+  }
+  for (const lightEl of lightEls) {
+    if (theme === "light") {
+      for (const child of lightEl.childNodes) {
+        lightEl.parentElement?.append(child);
+      }
+    }
+    lightEl.remove();
+  }
+})();`;
+
+function ThemeBody({ ssrTheme }: { ssrTheme: boolean }) {
+  return ssrTheme ? null : (
+    <script
+      dangerouslySetInnerHTML={{ __html: clientDarkAndLightModeElsCode }}
+    />
   );
 }
 
@@ -84,7 +158,8 @@ function ThemeProvider({
         return null;
       }
     }
-    if (typeof window !== "object") {
+
+    if (typeof document === "undefined") {
       return null;
     }
 
@@ -126,6 +201,33 @@ function ThemeProvider({
   );
 }
 
+function Themed({
+  dark,
+  light,
+  initialOnly = false,
+}: {
+  dark: ReactNode | string;
+  light: ReactNode | string;
+  initialOnly?: boolean;
+}) {
+  const [theme] = useTheme();
+  const [initialTheme] = useState(theme);
+  const themeToReference = initialOnly ? initialTheme : theme;
+  const serverRenderWithUnknownTheme =
+    !theme && typeof document === "undefined";
+
+  if (serverRenderWithUnknownTheme) {
+    return (
+      <>
+        {createElement("dark-mode", null, dark)}
+        {createElement("light-mode", null, light)}
+      </>
+    );
+  }
+
+  return <>{themeToReference === "light" ? light : dark}</>;
+}
+
 function useTheme() {
   const context = useContext(ThemeContext);
   if (context === undefined) {
@@ -134,4 +236,12 @@ function useTheme() {
   return context;
 }
 
-export { NonFlashOfWrongThemeEls, Theme, ThemeProvider, isTheme, useTheme };
+export {
+  ThemeBody,
+  Themed,
+  ThemeHead,
+  Theme,
+  ThemeProvider,
+  isTheme,
+  useTheme,
+};

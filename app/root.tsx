@@ -12,6 +12,8 @@ import stylesheet from "~/tailwind.css";
 import {
   NonFlashOfWrongThemeEls,
   Theme,
+  ThemeBody,
+  ThemeHead,
   ThemeProvider,
   useTheme,
 } from "./utils/theme-provider";
@@ -48,7 +50,7 @@ function App() {
         <meta charSet="utf-8" />
         <meta name="viewport" />
         <link rel="icon" href="data:image/x-icon;base64,AA" />
-        <NonFlashOfWrongThemeEls ssrTheme={Boolean(data.theme)} />
+        <ThemeHead ssrTheme={Boolean(data.theme)} />
         <Meta />
         <Links />
       </head>
@@ -56,8 +58,8 @@ function App() {
         <TopBar />
         <div className="pt-[4rem] flex flex-1 flex-col">
           <Outlet />
+          <ThemeBody ssrTheme={Boolean(data.theme)} />
         </div>
-
         <Footer />
         <ScrollRestoration />
         <Scripts />

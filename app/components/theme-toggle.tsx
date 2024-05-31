@@ -1,7 +1,7 @@
 import { MoonIcon, SunIcon } from "@heroicons/react/16/solid";
 import clsx from "clsx";
 import { ToggleButton } from "react-aria-components";
-import { Theme, useTheme } from "~/utils/theme-provider";
+import { Theme, Themed, useTheme } from "~/utils/theme-provider";
 
 export interface ThemeToggleProps {
   showLabel?: boolean;
@@ -32,17 +32,21 @@ export function ThemeToggle({ showLabel, size }: ThemeToggleProps) {
             {theme === Theme.LIGHT ? "Try dark mode" : "Try light mode"}
           </p>
         ) : null}
-        {theme === Theme.LIGHT ? (
-          <MoonIcon
-            className="text-slate-400"
-            height={size === "lg" ? 20 : 18}
-          />
-        ) : (
-          <SunIcon
-            className="text-slate-200"
-            height={size === "lg" ? 20 : 18}
-          />
-        )}
+
+        <Themed
+          dark={
+            <SunIcon
+              className="text-slate-200"
+              height={size === "lg" ? 20 : 18}
+            />
+          }
+          light={
+            <MoonIcon
+              className="text-slate-400"
+              height={size === "lg" ? 20 : 18}
+            />
+          }
+        />
       </ToggleButton>
     </div>
   );
