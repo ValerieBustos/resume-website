@@ -13,7 +13,7 @@ export default function Portfolio() {
       <PortfolioProject
         name="valeriebustos.com"
         type="Responsive"
-        description="I built this site from scratch using React Aria components, TypeScript and React Remix. Feel free to try out dark mode and change the window width to see the responsive design."
+        description="I built this site from scratch using React Aria components, TypeScript and React Remix. Feel free to try out dark mode and adjust the window width to see the responsive design."
         featuredPicture={mainWebsite}
         skillsUsed={["Responsive Design", "TailwindCSS", "React Remix"]}
       />

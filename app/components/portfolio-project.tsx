@@ -49,7 +49,7 @@ export function PortfolioProject(props: PortfolioProjectProps) {
               >
                 <div className="transition ease-in-out delay-150 flex flex-col shadow-md rounded-md lg:w-40 w-36 overflow-hidden hover:-translate-y-1">
                   <img
-                    aria-label="A picture of the project's low fidelity protoype"
+                    aria-label={`A picture of ${name} project's low fidelity protoype`}
                     src={loFiPicture}
                     className="object-cover"
                   />
@@ -68,7 +68,7 @@ export function PortfolioProject(props: PortfolioProjectProps) {
               >
                 <div className="transition ease-in-out delay-150 flex flex-col shadow-md rounded-md lg:w-40 w-36 overflow-hidden hover:-translate-y-1">
                   <img
-                    aria-label="A picture of the project's high fidelity protoype"
+                    aria-label={`A picture of ${name} project's high fidelity protoype`}
                     src={hiFiPicture}
                     className="object-cover"
                   />
@@ -97,7 +97,7 @@ export function PortfolioProject(props: PortfolioProjectProps) {
       </div>
       <div className="flex-1 w-full hidden md:flex">
         <img
-          aria-label="A features picture of the project"
+          aria-label={`A mockup of the ${name} project`}
           className="object-cover rounded-r-md"
           src={featuredPicture}
         />
