@@ -1,4 +1,4 @@
-/*import { createCookieSessionStorage } from "@remix-run/node";
+import { createCookieSessionStorage } from "@remix-run/node";
 
 import { Theme, isTheme } from "./theme-provider";
 
@@ -31,4 +31,3 @@ async function getThemeSession(request: Request) {
 }
 
 export { getThemeSession };
-*/

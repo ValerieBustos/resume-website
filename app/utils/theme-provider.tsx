@@ -16,13 +16,11 @@ const getPreferredTheme = () =>
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-/* SPENCER
 const themes: Array<Theme> = Object.values(Theme);
 
 function isTheme(value: unknown): value is Theme {
   return typeof value === "string" && themes.includes(value as Theme);
 }
-*/
 
 const clientThemeCode = `
 ;(() => {
@@ -39,26 +37,46 @@ const clientThemeCode = `
   } else {
     cl.add(theme);
   }
+
+  const meta = document.querySelector("meta[name=color-scheme]");
+  if (meta) {
+    if (theme === "dark") {
+      meta.content = "dark light";
+    } else if (theme === "light") {
+      meta.content = "light dark"; 
+    }
+  } else {
+    console.warn(
+      "Hey, could you let me know you're seeing this message? Thanks!",
+    );
+  }
 })();
 `;
 
-function NonFlashOfWrongThemeEls(/*{ ssrTheme }: { ssrTheme: boolean }*/) {
+function NonFlashOfWrongThemeEls({ ssrTheme }: { ssrTheme: boolean }) {
+  const [theme] = useTheme();
+
   return (
     <>
-      <script dangerouslySetInnerHTML={{ __html: clientThemeCode }} />
+      <meta
+        name="color-scheme"
+        content={theme === "light" ? "light dark" : "dark light"}
+      />
+      {ssrTheme ? null : (
+        <script dangerouslySetInnerHTML={{ __html: clientThemeCode }} />
+      )}
     </>
   );
 }
 
 function ThemeProvider({
-  children /* SPENCER ,
-  specifiedTheme, */,
+  children,
+  specifiedTheme,
 }: {
   children: ReactNode;
-  /* SPENCER specifiedTheme: Theme | null; */
+  specifiedTheme: Theme | null;
 }) {
   const [theme, setTheme] = useState<Theme | null>(() => {
-    /*
     if (specifiedTheme) {
       if (themes.includes(specifiedTheme)) {
         return specifiedTheme;
@@ -66,9 +84,6 @@ function ThemeProvider({
         return null;
       }
     }
-    return null;
-    */
-    // SPENCER to delete later?
     if (typeof window !== "object") {
       return null;
     }
@@ -76,12 +91,7 @@ function ThemeProvider({
     return getPreferredTheme();
   });
 
-  /* SPENCER
   const persistTheme = useFetcher();
-  const persistThemeRef = useRef(persistTheme);
-  useEffect(() => {
-    persistThemeRef.current = persistTheme;
-  }, [persistTheme]);
 
   const mountRun = useRef(false);
 
@@ -94,19 +104,26 @@ function ThemeProvider({
       return;
     }
 
-    persistThemeRef.current.submit(
+    persistTheme.submit(
       { theme },
       { action: "action/set-theme", method: "post" }
     );
   }, [theme]);
-  */
-  //return //(
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia(prefersDarkMQ);
+    const handleChange = () => {
+      setTheme(mediaQuery.matches ? Theme.DARK : Theme.LIGHT);
+    };
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
+
   return (
     <ThemeContext.Provider value={[theme, setTheme]}>
       {children}
     </ThemeContext.Provider>
   );
-  //)
 }
 
 function useTheme() {
@@ -117,9 +134,4 @@ function useTheme() {
   return context;
 }
 
-export {
-  NonFlashOfWrongThemeEls,
-  Theme,
-  ThemeProvider,
-  /* isTheme, */ useTheme,
-};
+export { NonFlashOfWrongThemeEls, Theme, ThemeProvider, isTheme, useTheme };

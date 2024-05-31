@@ -1,8 +1,7 @@
-/*import { json, redirect } from "@remix-run/node";
+import { json, redirect } from "@remix-run/node";
 import type { ActionFunction, LoaderFunction } from "@remix-run/node";
 import { isTheme } from "~/utils/theme-provider";
 import { getThemeSession } from "~/utils/theme.server";
-
 export const action: ActionFunction = async ({ request }) => {
   const themeSession = await getThemeSession(request);
   const requestText = await request.text();
@@ -24,4 +23,3 @@ export const action: ActionFunction = async ({ request }) => {
 };
 
 export const loader: LoaderFunction = () => redirect("/", { status: 404 });
-*/
