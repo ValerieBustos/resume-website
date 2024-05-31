@@ -10,7 +10,6 @@ import {
 } from "@remix-run/react";
 import stylesheet from "~/tailwind.css";
 import {
-  NonFlashOfWrongThemeEls,
   Theme,
   ThemeBody,
   ThemeHead,
@@ -48,7 +47,7 @@ function App() {
     <html lang="en" className={clsx(theme)}>
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="data:image/x-icon;base64,AA" />
         <ThemeHead ssrTheme={Boolean(data.theme)} />
         <Meta />

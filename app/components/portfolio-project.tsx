@@ -29,7 +29,7 @@ export function PortfolioProject(props: PortfolioProjectProps) {
 
   return (
     <div className="flex flex-wrap-reverse md:flex-nowrap justify-center border-2 dark:border-slate-700 rounded-md border-slate-100 mb-10">
-      <div className="flex flex-col space-y-4 w-[60%] items-center justify-center  md:items-start text-center md:text-start p-8">
+      <div className="flex flex-col space-y-4 md:w-[60%] items-center justify-center  md:items-start text-center md:text-start p-8">
         <div className="flex items-center space-x-4">
           <h2 className="text-2xl font-semibold">{name}</h2>
           <div className="rounded-full bg-lime-200/70 text-green-900 text-xs font-semibold px-2 py-0.5 hidden md:flex">

@@ -8,7 +8,7 @@ import mainWebsite from "~/media/website-main.png";
 
 export default function Portfolio() {
   return (
-    <div className="px-16 mt-12">
+    <div className="px-8 md:px-16 mt-12">
       <h1 className="text-3xl font-medium mb-10">Portfolio</h1>
       <PortfolioProject
         name="valeriebustos.com"

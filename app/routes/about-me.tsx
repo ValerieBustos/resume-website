@@ -3,11 +3,11 @@ import Curly from "~/media/about/valerie-curly.jpg";
 
 export default function AboutMe() {
   return (
-    <div className="px-16 pt-10 pb-16 space-y-6">
+    <div className="px-8 md:px-16 pt-10 pb-16 space-y-6">
       <h1 className="text-2xl font-semibold">A little bit about me!</h1>
-      <div className="text-sm flex inline-flex flex-wrap md:flex-nowrap bg-violet-50 border-2 dark:bg-slate-800 dark:border-slate-700 border-violet-100 shadow-lg rounded-md">
-        <div className="flex flex-col justify-center text-sm space-y-4 p-10">
-          <h2 className="text-xl font-bold mb-4">Education</h2>
+      <div className="text-sm flex flex-wrap md:flex-nowrap bg-violet-50 border-2 dark:bg-slate-800 dark:border-slate-700 border-violet-100 shadow-lg rounded-md">
+        <div className="flex flex-col justify-center text-sm space-y-4 p-6 md:p-10">
+          <h2 className="text-xl font-bold md:mb-4">Education</h2>
           <p>
             I graduated with Honours from the University of Waterloo in Spring
             of 2023. I have a degree in Pure Mathematics with a Computing minor.
@@ -38,9 +38,9 @@ export default function AboutMe() {
           />
         </div>
       </div>
-      <div className="text-sm flex flex-wrap flex-wrap md:flex-nowrap bg-violet-50 justify-center border-2 dark:bg-slate-800 dark:border-slate-700  border-violet-100 shadow-lg rounded-md">
-        <div className="flex flex-col justify-center text-sm space-y-4 p-10 rounded-l-md">
-          <h2 className="text-xl font-bold mb-4">Hobbies</h2>
+      <div className="text-sm flex flex-wrap md:flex-nowrap bg-violet-50 justify-center border-2 dark:bg-slate-800 dark:border-slate-700  border-violet-100 shadow-lg rounded-md">
+        <div className="flex flex-col justify-center text-sm space-y-4 p-6 md:p-10 rounded-l-md">
+          <h2 className="text-xl font-bold md:mb-4">Hobbies</h2>
           <p>
             Whenever I'm not coding, I'm working on helping out my fellow curly
             girls! I am an Instagram content creator who focuses on teaching

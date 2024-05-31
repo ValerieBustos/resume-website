@@ -17,21 +17,23 @@ import { v4 as uuid } from "uuid";
 
 export default function Index() {
   return (
-    <div className="mt-16">
-      <div className="flex justify-center mb-12 space-x-12 px-16">
-        <div className="flex max-w-[80%]">
+    <div className="flex flex-col mt-16">
+      <div className="flex justify-center mb-12 space-x-12 px-8 md:px-16">
+        <div className="flex lg:max-w-[80%]">
           <div className="flex flex-col space-y-6 max-w-4xl">
             <div className="space-y-4 ">
               <h1 className="text-5xl font-semibold">Valerie Bustos</h1>
-              <div className="flex space-x-2 text-xl font-semibold text-nowrap">
+              <div className="flex flex-wrap gap-2 text-xl font-semibold text-nowrap">
                 <h2> Frontend Developer</h2>
-                <span className="text-xl font-bold text-slate-400">·</span>
-                <p className="text-violet-600 dark:text-violet-400 font-medium text-nowrap">
+                <span className="text-xl font-bold hidden sm:flex text-slate-400">
+                  ·
+                </span>
+                <p className="text-violet-600 text-lg dark:text-violet-400 font-medium text-nowrap">
                   2+ years of work experience
                 </p>
               </div>
             </div>
-            <p className="text-sm  pr-10">
+            <p className="text-sm lg:pr-10">
               I'm a software developer with a passion for design. I discovered
               my love for frontend developent during my years as a student at
               the University of Waterloo, and I've been making great apps and
@@ -67,7 +69,7 @@ export default function Index() {
             This site was designed and built with
           </h3>
         </div>
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 grid-cols-1 gap-y-4 justify-items-center md:px-24 px-10 text-xl">
+        <div className="inline-grid sm:grid-cols-2 md:grid-cols-4 grid-cols-1 gap-y-4 justify-items-center md:px-24 px-10 text-xl">
           <div className="flex text-base h-full justify-center items-center space-x-3 m-2">
             <TailwindLogo />
             <p>TailwindCSS</p>
@@ -87,15 +89,15 @@ export default function Index() {
         </div>
       </div>
 
-      <div className="flex p-16 text-sm">
+      <div className="flex p-8 md:p-16 text-sm">
         <div className="flex flex-col w-full">
           <div className="flex justify-start xl:justify-center">
             <h3 className="text-2xl font-bold mb-10">My Experience</h3>
           </div>
-          <div className="flex justify-center px-6">
-            <div className="max-w-[45rem]">
+          <div className="flex justify-center">
+            <div className="lg:max-w-[45rem]">
               <div>
-                <div className="relative border-l-2 border-violet-200 dark:border-violet-900 pb-3  px-6">
+                <div className="relative border-l-2 border-violet-200 dark:border-violet-900 pb-3  pl-6">
                   <div className="absolute w-3 h-3 bg-violet-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-violet-600 dark:bg-violet-700"></div>
                   <div className="space-y-1">
                     <h3 className="text-sm font-semibold">
@@ -202,12 +204,12 @@ export default function Index() {
           </div>
         </div>
       </div>
-      <div className="px-16 space-y-4 mb-16">
+      <div className="px-8 md:px-16 space-y-4 mb-16">
         <div className="flex justify-start xl:justify-center">
           <h3 className="text-2xl font-bold mb-6">My Projects</h3>
         </div>
         <div className="flex justify-start xl:justify-center xl:text-center text-start">
-          <p className="text-sm max-w-[80%]">
+          <p className="text-sm sm:max-w-[80%]">
             Lots to do and lots to learn! I like to keep myself busy by working
             on projects to perfect my craft. My portfolio showcases the
             knowledge I have gained through coursework and on-the-job
@@ -219,17 +221,17 @@ export default function Index() {
           <img
             aria-label="A picture of Valerie Bustos' personal website displayed on a laptop"
             src={ValerieSite}
-            className="h-72 rounded-md"
+            className="sm:h-72 rounded-md"
           />
           <img
             aria-label="A picture of Mirian's website displayed on a desktop"
             src={MiriansSite}
-            className="h-72 rounded-md"
+            className="sm:h-72 rounded-md"
           />
           <img
             aria-label="A features picture of Atikha's virtual brochure project"
             src={BrochureAtikha}
-            className="h-72 rounded-md"
+            className="sm:h-72 rounded-md"
           />
         </div>
         <div className="flex justify-center">
