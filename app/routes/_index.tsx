@@ -13,50 +13,53 @@ import MiriansSite from "~/media/mirians-website/main.png";
 import BrochureAtikha from "~/media/atikha-brochure/main.png";
 import ValerieSite from "~/media/website-main.png";
 import { Link } from "react-aria-components";
+import { v4 as uuid } from "uuid";
 
 export default function Index() {
   return (
-    <div className="mt-12">
-      <div className="flex justify-between mb-12 space-x-12 px-16">
-        <div className="flex flex-col space-y-6 max-w-4xl">
-          <div className="space-y-4">
-            <h1 className="text-5xl font-semibold">Valerie Bustos</h1>
-            <div className="flex space-x-2 text-xl font-semibold">
-              <h2> Frontend Developer</h2>
-              <span className="text-xl font-bold text-slate-400">·</span>
-              <p className="text-violet-600 dark:text-violet-400 font-medium">
-                2+ years of work experience
-              </p>
+    <div className="mt-16">
+      <div className="flex justify-center mb-12 space-x-12 px-16">
+        <div className="flex max-w-[80%]">
+          <div className="flex flex-col space-y-6 max-w-4xl">
+            <div className="space-y-4 ">
+              <h1 className="text-5xl font-semibold">Valerie Bustos</h1>
+              <div className="flex space-x-2 text-xl font-semibold text-nowrap">
+                <h2> Frontend Developer</h2>
+                <span className="text-xl font-bold text-slate-400">·</span>
+                <p className="text-violet-600 dark:text-violet-400 font-medium text-nowrap">
+                  2+ years of work experience
+                </p>
+              </div>
+            </div>
+            <p className="text-sm  pr-10">
+              I'm a software developer with a passion for design. I discovered
+              my love for frontend developent during my years as a student at
+              the University of Waterloo, and I've been making great apps and
+              components ever since. I'm always working to learn and improve my
+              skills. My background as an Ecuadorian living in Canada has
+              allowed me to empathize with a diverse range of users and has
+              driven me to advocate for inclusivity in UX design.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <div>
+                <Button
+                  primary
+                  label="View portfolio"
+                  icon={<BriefcaseIcon className="h-5 w-5" />}
+                  href="/portfolio"
+                />
+              </div>
+              <div>
+                <Button
+                  label="View resume"
+                  icon={<DocumentTextIcon className="h-5 w-5" />}
+                  href="https://drive.google.com/file/d/1QouSAs16JLPk3cMAzG9o59PwQiFVmFgN/view?usp=drive_link"
+                />
+              </div>
             </div>
           </div>
-          <p className="text-sm">
-            I'm a software developer with a passion for design. I discovered my
-            love for frontend developent during my years as a student at the
-            University of Waterloo, and I've been making great apps and
-            components ever since. I'm always working to learn and improve my
-            skills. My background as an Ecuadorian living in Canada has allowed
-            me to empathize with a diverse range of users and has driven me to
-            advocate for inclusivity in UX design.
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <div>
-              <Button
-                primary
-                label="View portfolio"
-                icon={<BriefcaseIcon className="h-5 w-5" />}
-                href="/portfolio"
-              />
-            </div>
-            <div>
-              <Button
-                label="View resume"
-                icon={<DocumentTextIcon className="h-5 w-5" />}
-                href="https://drive.google.com/file/d/1QouSAs16JLPk3cMAzG9o59PwQiFVmFgN/view?usp=drive_link"
-              />
-            </div>
-          </div>
+          <HomepagePic />
         </div>
-        <HomepagePic />
       </div>
       <div className="flex flex-col flex-wrap justify-between w-full space-y-4 border-y-2 border-violet-300 dark:border-violet-900 py-8  bg-gradient dark:bg-gradientdark">
         <div className="flex justify-center sm:w-full">
@@ -119,7 +122,10 @@ export default function Index() {
                       "Storybook",
                       "TypeScript",
                     ].map((label: string) => (
-                      <div className="rounded-lg py-0.5 px-1 font-medium text-xs dark:bg-violet-950 dark:text-violet-200 bg-violet-100 text-violet-900">
+                      <div
+                        key={uuid()}
+                        className="rounded-lg py-0.5 px-1 font-medium text-xs dark:bg-violet-950 dark:text-violet-200 bg-violet-100 text-violet-900"
+                      >
                         {label}
                       </div>
                     ))}
@@ -145,7 +151,10 @@ export default function Index() {
                   <div className="flex flex-wrap gap-4  mb-6">
                     {["React Hooks", "Javascript", "CSS", "Teamwork"].map(
                       (label: string) => (
-                        <div className="rounded-lg py-0.5 px-1 font-medium dark:bg-violet-950 dark:text-violet-200 text-xs bg-violet-100 text-violet-900">
+                        <div
+                          key={uuid()}
+                          className="rounded-lg py-0.5 px-1 font-medium dark:bg-violet-950 dark:text-violet-200 text-xs bg-violet-100 text-violet-900"
+                        >
                           {label}
                         </div>
                       )
@@ -178,7 +187,10 @@ export default function Index() {
                   <div className="flex flex-wrap gap-4">
                     {["User experience", "Maple", "Communication"].map(
                       (label: string) => (
-                        <div className="rounded-lg py-0.5 px-1 text-xs  font-medium bg-violet-100 dark:bg-violet-950 dark:text-violet-200 text-violet-900">
+                        <div
+                          key={uuid()}
+                          className="rounded-lg py-0.5 px-1 text-xs  font-medium bg-violet-100 dark:bg-violet-950 dark:text-violet-200 text-violet-900"
+                        >
                           {label}
                         </div>
                       )
@@ -194,12 +206,15 @@ export default function Index() {
         <div className="flex justify-start xl:justify-center">
           <h3 className="text-2xl font-bold mb-6">My Projects</h3>
         </div>
-        <p className="text-sm">
-          Lots to do and lots to learn! I like to keep myself busy by working on
-          projects to perfect my craft. My portfolio showcases the knowledge I
-          have gained through coursework and on-the-job experience. I take pride
-          in attention to detail and clean design.
-        </p>
+        <div className="flex justify-start xl:justify-center xl:text-center text-start">
+          <p className="text-sm max-w-[80%]">
+            Lots to do and lots to learn! I like to keep myself busy by working
+            on projects to perfect my craft. My portfolio showcases the
+            knowledge I have gained through coursework and on-the-job
+            experience. I take pride in attention to detail and clean design.
+          </p>
+        </div>
+
         <div className="flex flex-wrap justify-center gap-10 p-6">
           <img
             aria-label="A picture of Valerie Bustos' personal website displayed on a laptop"

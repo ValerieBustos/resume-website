@@ -70,7 +70,7 @@ export function TopBar() {
           </div>
           <ThemeToggle />
         </div>
-        <div className="flex items-center">
+        <div className="flex justify-end items-center">
           <MenuTrigger>
             <Button
               aria-label="Menu"
