@@ -8,7 +8,7 @@ export function GitHub() {
       target="_blank"
       href="https://github.com/valeriebustos"
       onHoverChange={setIsHovering}
-      className="rounded-full focus:outline-none focus:ring focus:ring-cyan-200"
+      className="rounded-full focus:outline-none focus:ring focus:ring-cyan-200 focus:dark:ring-cyan-500"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

@@ -22,7 +22,7 @@ export default function Contact() {
                 <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">
                   Email
                 </p>
-                <p className="text-sm">valeried.bustos@hotmail.com</p>
+                <p className="text-sm">valerie@valeriebustos.com</p>
               </div>
             </div>
             <div className="flex items-center space-x-3">

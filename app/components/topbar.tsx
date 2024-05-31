@@ -48,19 +48,19 @@ export function TopBar() {
         <div className="flex flex-wrap items-center space-x-10 mx-auto ml-0 text-center">
           <Link
             href="./"
-            className="flex items-center space-x-3 rounded-md rtl:space-x-reverse focus:outline-none focus:ring focus:ring-violet-300"
+            className="flex items-center space-x-3 rounded-md rtl:space-x-reverse without-ring"
           >
-            <span className="self-center text-3xl text-violet-600 font-bold whitespace-nowrap dark:text-violet-400 ">
+            <span className="rounded-full px-1 py-0.5 self-center text-3xl text-violet-600 font-bold whitespace-nowrap dark:text-violet-400 ">
               VB
             </span>
           </Link>
           <div className="hidden w-full md:block md:w-auto" id="navbar-default">
             <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               {navLinks.map((menuItem, index) => (
-                <li key={`nav-menuItem-${index}`}>
+                <li key={`nav-menuItem-${index} `}>
                   <Link
                     href={menuItem.link}
-                    className="block px-3 text-slate-700 without-ring outline-none focus-visible:ring-violet-300 rounded hover:bg-slate-100 md:hover:bg-transparent md:border-0 md:hover:text-violet-400 md:p-0 dark:text-white md:dark:hover:text-violet-400 dark:hover:bg-slate-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                    className="py-0.5 block px-1 text-slate-700 without-ring rounded hover:bg-slate-100 md:hover:bg-transparent md:border-0 md:hover:text-violet-400 dark:text-white md:dark:hover:text-violet-400 dark:hover:bg-slate-700 dark:hover:text-white md:dark:hover:bg-transparent"
                   >
                     {menuItem.label}
                   </Link>
@@ -93,7 +93,7 @@ export function TopBar() {
                     <MenuItem
                       key={menuItem.label}
                       href={menuItem.link}
-                      className="ml-6 p-2 m-1 outline-none text-md font-semibold hover:text-violet-400"
+                      className="ml-6 py-0.5 text-center ring-0 rounded-full block px-1 focus:ring-2 focus:ring-violet-200 p-2 m-1 outline-none text-md font-semibold hover:text-violet-400"
                     >
                       {menuItem.label}
                     </MenuItem>

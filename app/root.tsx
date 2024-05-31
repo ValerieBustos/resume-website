@@ -22,6 +22,16 @@ import Footer from "./components/footer";
 import { getThemeSession } from "./utils/theme.server";
 
 export const links: LinksFunction = () => [
+  {
+    rel: "icon",
+    href: "/favicon.ico",
+    type: "image/x-icon",
+  },
+  {
+    rel: "resume",
+    href: "/valerie-bustos-resume.pdf",
+    type: "file/pdf",
+  },
   { rel: "stylesheet", href: stylesheet },
 ];
 

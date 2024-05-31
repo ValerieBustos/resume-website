@@ -4,9 +4,9 @@
 
 @layer base {
   .without-ring:focus:not(:focus-visible) {
-    @apply focus:ring-0 focus:ring-offset-0;
+    @apply outline-none focus:ring-0 focus:ring-offset-0;
   }
   .without-ring:focus-visible {
-    @apply ring-2 ring-offset-2;
+    @apply outline-none ring ring-violet-200;
   }
 }

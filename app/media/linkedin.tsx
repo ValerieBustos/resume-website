@@ -7,7 +7,7 @@ export function LinkedIn() {
     <Link
       target="_blank"
       href="https://www.linkedin.com/in/valerie-bustos/"
-      className="rounded-sm focus:outline-none focus:ring focus:ring-cyan-200"
+      className="rounded-sm focus:outline-none focus:ring focus:ring-offset-0 focus:ring-cyan-200 focus:dark:ring-cyan-500"
       onHoverChange={setIsHovering}
     >
       <svg

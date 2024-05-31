@@ -55,7 +55,8 @@ export default function Index() {
                 <Button
                   label="View resume"
                   icon={<DocumentTextIcon className="h-5 w-5" />}
-                  href="https://drive.google.com/file/d/1QouSAs16JLPk3cMAzG9o59PwQiFVmFgN/view?usp=drive_link"
+                  href="/valerie-bustos-resume.pdf"
+                  newPage
                 />
               </div>
             </div>
@@ -237,7 +238,7 @@ export default function Index() {
         <div className="flex justify-center">
           <Link
             href="/portfolio"
-            className=" dark:bg-slate-700 dark:text-slate-100 inline-block items-center rounded-full py-2 px-4 font-medium text-sm flex rounded-full bg-slate-300 text-slate-700 hover:opacity-90 focus:outline-none focus:ring focus:ring-slate-200"
+            className=" dark:bg-slate-700 focus:dark:ring-slate-600 dark:text-slate-100 inline-block items-center rounded-full py-2 px-4 font-medium text-sm flex rounded-full bg-slate-300 text-slate-700 hover:opacity-90 focus:outline-none focus:ring focus:ring-slate-200"
           >
             <div className="mr-1">Read more</div>
             <ArrowRightIcon height={16} />
