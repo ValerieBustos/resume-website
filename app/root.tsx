@@ -59,6 +59,7 @@ function App() {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="data:image/x-icon;base64,AA" />
+        <title>Valerie Bustos</title>
         <ThemeHead ssrTheme={Boolean(data.theme)} />
         <Meta />
         <Links />
