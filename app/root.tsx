@@ -29,7 +29,7 @@ export const links: LinksFunction = () => [
   },
   {
     rel: "resume",
-    href: "/valerie-bustos-resume.pdf",
+    href: "/resume-valerie-bustos.pdf",
     type: "file/pdf",
   },
   { rel: "stylesheet", href: stylesheet },
