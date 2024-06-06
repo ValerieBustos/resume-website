@@ -29,7 +29,7 @@ export default function Index() {
                   ·
                 </span>
                 <p className="text-violet-600 text-lg dark:text-violet-400 font-medium text-nowrap">
-                  2+ years of work experience
+                  3 years of work experience
                 </p>
               </div>
             </div>
