@@ -11,9 +11,11 @@ import { Avatar } from "~/media/avatar";
 import { SocialIcons } from "./social-icons";
 import { ThemeToggle } from "./theme-toggle";
 import { useEffect, useState } from "react";
+import clsx from "clsx";
 
 export function TopBar() {
   const [top, setTop] = useState(true);
+  const [enableOutline, setEnableOutline] = useState(false);
 
   useEffect(() => {
     const scrollHandler = () => {
@@ -22,6 +24,20 @@ export function TopBar() {
     window.addEventListener("scroll", scrollHandler);
     return () => window.removeEventListener("scroll", scrollHandler);
   }, [top]);
+
+  useEffect(() => {
+    const handleKeydown = (e: KeyboardEvent) => {
+      // Detect a keyboard user from a tab key press
+      const isTabEvent = e.key === "Tab";
+
+      if (isTabEvent) {
+        setEnableOutline(true);
+      }
+
+      window.removeEventListener("keydown", handleKeydown);
+    };
+    window.addEventListener("keydown", handleKeydown);
+  }, []);
 
   const navLinks = [
     {
@@ -48,9 +64,14 @@ export function TopBar() {
         <div className="flex flex-wrap items-center space-x-10 mx-auto ml-0 text-center">
           <Link
             href="./"
-            className="flex items-center space-x-3 rounded-md rtl:space-x-reverse without-ring"
+            className={clsx(
+              enableOutline
+                ? "focus:ring focus:ring-violet-200 focus:text-violet-500"
+                : "focus:ring-0",
+              "outline-none flex items-center space-x-3 rounded-md rtl:space-x-reverse"
+            )}
           >
-            <span className="rounded-full px-1 py-0.5 self-center text-3xl text-violet-600 font-bold whitespace-nowrap dark:text-violet-400 ">
+            <span className="rounded-full px-1 py-0.5 self-center text-3xl text-violet-600 hover:text-violet-500 font-bold whitespace-nowrap dark:text-violet-400 ">
               VB
             </span>
           </Link>
@@ -60,7 +81,12 @@ export function TopBar() {
                 <li key={`nav-menuItem-${index} `}>
                   <Link
                     href={menuItem.link}
-                    className="py-0.5 block px-1 text-slate-700 without-ring rounded hover:bg-slate-100 md:hover:bg-transparent md:border-0 md:hover:text-violet-400 dark:text-white md:dark:hover:text-violet-400 dark:hover:bg-slate-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                    className={clsx(
+                      enableOutline
+                        ? "focus:ring focus:ring-violet-200 focus:text-violet-500"
+                        : "focus:ring-0",
+                      "outline-none py-0.5 block px-1 text-slate-700 rounded hover:bg-slate-100 md:hover:bg-transparent md:border-0 md:hover:text-violet-500 active:text-violet-700 dark:text-white md:dark:hover:text-violet-400 dark:hover:bg-slate-700 dark:hover:text-white md:dark:hover:bg-transparent "
+                    )}
                   >
                     {menuItem.label}
                   </Link>
@@ -102,7 +128,6 @@ export function TopBar() {
                 <div className="h-24" />
                 <div className="flex justify-center w-full p-6 space-x-4">
                   <SocialIcons />
-                  <ThemeToggle />
                 </div>
               </div>
             </Popover>

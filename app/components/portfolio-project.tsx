@@ -82,7 +82,9 @@ export function PortfolioProject(props: PortfolioProjectProps) {
           </div>
         ) : null}
         <div>
-          <h4 className="font-semibold mb-2 text-xs">Tools and skills used</h4>
+          <h4 className="font-semibold mb-2 text-xs text-center md:text-start">
+            Tools and skills used
+          </h4>
           <div className="flex flex-wrap gap-2 justify-center md:justify-start">
             {skillsUsed.map((skill) => (
               <div
