@@ -57,7 +57,7 @@ function App() {
     <html lang="en" className={clsx(theme)}>
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.1" />
         <link rel="icon" href="data:image/x-icon;base64,AA" />
         <title>Valerie Bustos</title>
         <ThemeHead ssrTheme={Boolean(data.theme)} />
