@@ -6,14 +6,14 @@ export default function Contact() {
   return (
     <div className="flex flex-1 p-6 justify-center  bg-gradient dark:bg-gradientdark">
       <div className="flex items-center space-y-12 pt-6">
-        <div className="flex justify-center space-x-6">
+        <div className="flex justify-center">
           <img
             aria-label="A picture of Valerie Bustos on her graduation"
             src={gradPic}
             className="h-[30rem] rounded-full hidden md:inline-flex"
           />
-          <div className="flex flex-col justify-center text-slate-800 border-4 border-violet-100 bg-violet-50 dark:bg-slate-800 dark:text-white dark:border-slate-700 px-10 py-16 rounded-[6rem] rounded-bl-none w-[25rem] space-y-6 ">
-            <h1 className="text-4xl font-bold mb-4">Let's get in touch!</h1>
+          <div className="flex flex-col justify-center text-slate-800 border-4 border-violet-100 bg-violet-50 dark:bg-slate-800 dark:text-white dark:border-slate-700 px-10 py-16 rounded-[6rem] rounded-bl-none w-[22rem] space-y-6 ">
+            <h1 className="text-3xl font-bold mb-4">Let's get in touch!</h1>
             <div className="flex items-center space-x-3">
               <div className="p-1.5 rounded-full bg-violet-300 dark:bg-violet-800 text-white">
                 <EnvelopeIcon aria-hidden height={20} />

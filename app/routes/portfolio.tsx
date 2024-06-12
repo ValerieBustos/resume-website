@@ -8,7 +8,7 @@ import mainWebsite from "~/media/website-main.png";
 
 export default function Portfolio() {
   return (
-    <div className="flex flex-col items-center px-8 md:px-16 mt-12">
+    <div className="flex flex-col items-center px-8 md:px-16 my-12">
       <div className="flex justify-center py-6  mb-10">
         <h1 className="text-4xl font-medium">Portfolio</h1>
       </div>
