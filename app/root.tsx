@@ -64,7 +64,7 @@ function App() {
         <Meta />
         <Links />
       </head>
-      <body className="h-screen flex flex-col flex-0 w-full text-slate-800 bg-white dark:text-white dark:bg-slate-900 max-w-screen-2xl mx-auto">
+      <body className="h-screen flex flex-col flex-0 w-full text-slate-800 bg-white dark:text-white dark:bg-slate-900  mx-auto">
         <TopBar />
         <div className="pt-[4rem] flex flex-1 flex-col">
           <Outlet />

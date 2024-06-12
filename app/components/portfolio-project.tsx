@@ -36,7 +36,7 @@ export function PortfolioProject(props: PortfolioProjectProps) {
             <h3>{type}</h3>
           </div>
         </div>
-        <div className=" text-justify md:text-start text-sm">
+        <div className="text-base text-justify md:text-start">
           <p>{description}</p>
         </div>
         {loFiPicture || hiFiPicture ? (
@@ -82,14 +82,14 @@ export function PortfolioProject(props: PortfolioProjectProps) {
           </div>
         ) : null}
         <div>
-          <h4 className="font-semibold mb-2 text-xs text-center md:text-start">
+          <h4 className="font-semibold mb-2 text-sm text-center md:text-start">
             Tools and skills used
           </h4>
           <div className="flex flex-wrap gap-2 justify-center md:justify-start">
             {skillsUsed.map((skill) => (
               <div
                 key={uuid()}
-                className="rounded-sm text-xs px-2 text-nowrap font-semibold bg-slate-100 text-slate-700 dark:bg-slate-600 dark:text-slate-100"
+                className="rounded-sm text-sm px-2 text-nowrap font-semibold bg-slate-100 text-slate-700 dark:bg-slate-600 dark:text-slate-100"
               >
                 {skill}
               </div>

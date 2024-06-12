@@ -23,17 +23,17 @@ export default function Index() {
           <div className="flex flex-col space-y-6 max-w-4xl">
             <div className="space-y-4 ">
               <h1 className="text-5xl font-semibold">Valerie Bustos</h1>
-              <div className="flex flex-wrap gap-2 text-xl font-semibold text-nowrap">
+              <div className="flex flex-wrap gap-2 text-2xl items-center font-semibold text-nowrap">
                 <h2> Frontend Developer</h2>
                 <span className="text-xl font-bold hidden sm:flex text-slate-400">
                   ·
                 </span>
-                <p className="text-violet-600 text-lg dark:text-violet-400 font-medium text-nowrap">
+                <p className="text-violet-600 text-2xl dark:text-violet-400 font-medium text-nowrap">
                   3 years of work experience
                 </p>
               </div>
             </div>
-            <p className="text-sm lg:pr-10">
+            <p className="text-base lg:pr-10">
               I'm a software developer with a passion for design. I discovered
               my love for frontend developent during my years as a student at
               the University of Waterloo, and I've been making great apps and
@@ -71,19 +71,19 @@ export default function Index() {
           </h3>
         </div>
         <div className="inline-grid sm:grid-cols-2 md:grid-cols-4 grid-cols-1 gap-y-4 justify-items-center md:px-24 px-10 text-xl">
-          <div className="flex text-base h-full justify-center items-center space-x-3 m-2">
+          <div className="flex text-lg h-full justify-center items-center space-x-3 m-2">
             <TailwindLogo />
             <p>TailwindCSS</p>
           </div>
-          <div className="flex text-base h-full justify-center items-center space-x-3 m-2">
+          <div className="flex text-lg h-full justify-center items-center space-x-3 m-2">
             <RemixLogo />
             <p>React Remix</p>
           </div>
-          <div className="flex text-base h-full justify-center items-center space-x-3 m-2">
+          <div className="flex text-lg h-full justify-center items-center space-x-3 m-2">
             <TypeScriptLogo />
             <p>TypeScript</p>
           </div>
-          <div className="flex text-base h-full justify-center items-center space-x-3 m-2">
+          <div className="flex text-lg h-full justify-center items-center space-x-3 m-2">
             <UniversalAccessIcon />
             <p>Accessibility</p>
           </div>
@@ -96,12 +96,12 @@ export default function Index() {
             <h3 className="text-2xl font-bold mb-10">My Experience</h3>
           </div>
           <div className="flex justify-center">
-            <div className="lg:max-w-[45rem]">
+            <div className="lg:max-w-[55rem]">
               <div>
                 <div className="relative border-l-2 border-violet-200 dark:border-violet-900 pb-3  pl-6">
                   <div className="absolute w-3 h-3 bg-violet-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-violet-600 dark:bg-violet-700"></div>
                   <div className="space-y-1">
-                    <h3 className="text-sm font-semibold">
+                    <h3 className="text-base font-semibold">
                       Software Developer
                     </h3>
                     <h4 className="text-sm italic">
@@ -139,7 +139,7 @@ export default function Index() {
                 <div className="relative border-l-2 border-violet-200 pb-3  dark:border-violet-900   px-6">
                   <div className="absolute w-3 h-3 bg-violet-200 rounded-full mt-1.5 -start-1.5 border  dark:border-violet-600  border-white dark:border-gray-900 dark:bg-violet-700"></div>
                   <div className="space-y-1">
-                    <h3 className="text-sm font-semibold">
+                    <h3 className="text-base font-semibold">
                       UI/UX Developer Intern
                     </h3>
                     <h4 className="text-sm italic">Autodesk &#183; 2021</h4>
@@ -167,9 +167,11 @@ export default function Index() {
               </div>
               <div>
                 <div className="relative border-l-2 border-violet-200  dark:border-violet-900  px-6 pb-6">
-                  <div className="absolute w-3 h-3 bg-violet-200 rounded-full mt-1.5 -start-1.5  dark:border-violet-600  border border-white dark:border-gray-900 dark:bg-violet-700"></div>
+                  <div className="absolute w-3 h-3 bg-violet-200 rounded-full mt-1.5 -start-1.5  dark:border-violet-600  border border-white dark:bg-violet-700"></div>
                   <div className="space-y-1">
-                    <h3 className="text-sm font-semibold">Developer Intern</h3>
+                    <h3 className="text-base font-semibold">
+                      Developer Intern
+                    </h3>
                     <h4 className="text-sm italic">
                       Maplesoft &#183; 2019, 2020
                     </h4>
@@ -209,8 +211,8 @@ export default function Index() {
         <div className="flex justify-start xl:justify-center">
           <h3 className="text-2xl font-bold mb-6">My Projects</h3>
         </div>
-        <div className="flex justify-start xl:justify-center xl:text-center text-start">
-          <p className="text-sm sm:max-w-[80%]">
+        <div className="px-8 flex justify-start xl:justify-center xl:text-center text-start">
+          <p className="text-base sm:max-w-[80%]">
             Lots to do and lots to learn! I like to keep myself busy by working
             on projects to perfect my craft. My portfolio showcases the
             knowledge I have gained through coursework and on-the-job
