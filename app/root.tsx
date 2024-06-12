@@ -57,14 +57,14 @@ function App() {
     <html lang="en" className={clsx(theme)}>
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="data:image/x-icon;base64,AA" />
         <title>Valerie Bustos</title>
         <ThemeHead ssrTheme={Boolean(data.theme)} />
         <Meta />
         <Links />
       </head>
-      <body className="h-screen flex flex-col flex-0 w-full text-slate-800 dark:text-white dark:bg-slate-900 max-w-screen-2xl mx-auto">
+      <body className="h-screen flex flex-col flex-0 w-full text-slate-800 bg-white dark:text-white dark:bg-slate-900 max-w-screen-2xl mx-auto">
         <TopBar />
         <div className="pt-[4rem] flex flex-1 flex-col">
           <Outlet />

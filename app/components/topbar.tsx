@@ -100,7 +100,7 @@ export function TopBar() {
           <MenuTrigger>
             <Button
               aria-label="Menu"
-              className="items-center mr-4 p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden hover:base-color focus:outline-none focus:ring-2 focus:ring-gray-200 dark:hover:bg-slate-600 dark:focus:ring-gray-600"
+              className="items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden hover:base-color focus:outline-none focus:ring-2 focus:ring-gray-200 dark:hover:bg-slate-600 dark:focus:ring-gray-600"
             >
               <Bars3Icon className="text-slate-700 dark:text-white" />
             </Button>
