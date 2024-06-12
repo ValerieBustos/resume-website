@@ -8,12 +8,14 @@ import mainWebsite from "~/media/website-main.png";
 
 export default function Portfolio() {
   return (
-    <div className="px-8 md:px-16 mt-12">
-      <h1 className="text-3xl font-medium mb-10">Portfolio</h1>
+    <div className="flex flex-col items-center px-8 md:px-16 mt-12">
+      <div className="flex justify-center py-6  mb-10">
+        <h1 className="text-4xl font-medium">Portfolio</h1>
+      </div>
       <PortfolioProject
         name="valeriebustos.com"
         type="Responsive"
-        description="I built this site from scratch using React Aria components, TypeScript and React Remix. Feel free to try out dark mode and adjust the window width to see the responsive design."
+        description="I built this site from scratch using React Aria components, TypeScript and React Remix. This website features dark mode! Feel free to try it out. It is also responsive and works on phones, tablets and desktops with various screen sizes. You can adjust the screen size in you desktop to see the design change dinamically. I worked on the design as I coded, without an existing mockup or wireframe and I keep improving it as I learn new design patterns. This site also has a strong focus on accessibility and welcomes keyboard navigation."
         featuredPicture={mainWebsite}
         skillsUsed={["Responsive Design", "TailwindCSS", "React Remix"]}
       />
