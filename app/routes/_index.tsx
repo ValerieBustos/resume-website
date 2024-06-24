@@ -55,7 +55,7 @@ export default function Index() {
                 <Button
                   label="View resume"
                   icon={<DocumentTextIcon className="h-5 w-5" />}
-                  href="/resume-valerie-bustos.pdf"
+                  href="/valerie-bustos-resume.pdf"
                   newPage
                 />
               </div>
