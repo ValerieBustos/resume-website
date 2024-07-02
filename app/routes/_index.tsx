@@ -35,7 +35,7 @@ export default function Index() {
             </div>
             <p className="text-base lg:pr-10">
               I'm a software developer with a passion for design. I discovered
-              my love for frontend developent during my years as a student at
+              my love for frontend development during my years as a student at
               the University of Waterloo, and I've been making great apps and
               components ever since. I'm always working to learn and improve my
               skills. My background as an Ecuadorian living in Canada has
